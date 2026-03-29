@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'ÉCLAT Gastronomy | The Art of Refined Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#1c1c19",
+              "surface-tint": "#775a19",
+              "inverse-primary": "#e9c176",
+              "on-surface-variant": "#4d4635",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#474747",
+              "secondary-container": "#e4e2e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "background": "#faf9f6",
+              "primary-fixed": "#ffdea5",
+              "outline-variant": "#d0c5af",
+              "tertiary-fixed": "#e5e2dd",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#5b4000",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-container-high": "#e9e8e5",
+              "primary": "#775a19",
+              "on-surface": "#1a1c1a",
+              "secondary": "#5f5e5e",
+              "on-primary-fixed": "#261900",
+              "surface-container-low": "#f4f3f1",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#e9c176",
+              "surface-bright": "#faf9f6",
+              "inverse-surface": "#2f312f",
+              "on-secondary-container": "#656464",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e3e2e0",
+              "tertiary": "#5f5e5b",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-tertiary-container": "#464542",
+              "on-error": "#ffffff",
+              "outline": "#7f7663",
+              "surface-container": "#efeeeb",
+              "surface-container-highest": "#e3e2e0",
+              "inverse-on-surface": "#f2f1ee",
+              "primary-container": "#d4ad65",
+              "surface": "#faf9f6",
+              "on-background": "#1a1c1a",
+              "secondary-fixed": "#e4e2e1",
+              "tertiary-fixed-dim": "#c9c6c2",
+              "tertiary-container": "#b5b3ae",
+              "on-tertiary-fixed-variant": "#474743",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #775a19 0%, #d4ad65 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed-dim">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-zinc-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<a class="text-2xl font-headline tracking-tighter text-amber-800 dark:text-amber-200" href="#">L'ÉCLAT</a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-amber-700 dark:text-amber-500 border-b border-amber-700/30 pb-1 font-label uppercase tracking-widest text-xs" href="#">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Menu</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Gallery</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Location</a>
+</div>
+<button class="bg-gold-gradient text-on-primary px-6 py-3 rounded-md font-label uppercase tracking-widest text-xs font-semibold shadow-sm hover:brightness-105 active:scale-95 transition-all">
+                Book a Table
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Signature Dish" class="w-full h-full object-cover grayscale-[20%]" data-alt="Close-up of a high-end gourmet dish with micro-greens and gold leaf, dramatic side lighting on a dark stone plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoutmT1OMOemiki86hYwMs3bLdHsGLH5WT25skqqO58wK8BdoLRbr4ExJ5diUwE-A5ynEufGKXQOtpxMGF2qmiORrGBM0f5d6DPwXilBgkxSTKxn7sRqs8MDE27c_SE-lChf2YEb4j5wd_d-CTTSlOIbkGGILw-T8-is6ns67U-m2aAOG0RJ5HOGBZc9WK43A-0T8UQsY1pXz8nSBehw9FOQhghU3sEgSwIN8U7y0kL_8V_4u8pBNzyBldQkZayTO_O9bDl6j7W-k"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<span class="block font-label uppercase tracking-[0.2em] text-primary mb-6 text-sm">Fine Dining Reimagined</span>
+<h1 class="font-headline text-6xl md:text-8xl text-on-background leading-[1.1] mb-8 tracking-tight">
+                        The Art of <br/> <span class="italic font-normal">Refined</span> Dining
+                    </h1>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-md font-light leading-relaxed">
+                        An immersive gastronomic journey where classical techniques meet contemporary vision. Each plate is a curated masterpiece.
+                    </p>
+<div class="flex items-center gap-8">
+<button class="bg-gold-gradient text-on-primary px-10 py-5 rounded-md font-label uppercase tracking-widest text-xs font-bold transition-transform hover:scale-[1.02]">
+                            Book Your Experience
+                        </button>
+<a class="font-label uppercase tracking-widest text-xs font-bold text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all" href="#">
+                            View Menu
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+<div class="md:col-span-5 order-2 md:order-1 relative">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Restaurant Interior" class="w-full h-full object-cover" data-alt="Interior of a luxury restaurant with soft ambient lighting, velvet seating, and architectural gold accents in an editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANyNeTfwFU1YjNvLAvyaTwBHnzPr_WHgfZwXwo1vZvR3eviMZzQFSQdQI6-Mkzgn5BC5sjAsW2JSsasahV6QeQcYS5_po-3wFF4cgDRq5zjDMqx76UmR748cd1x9KnTzyW0UqhbX0myPtHTOpczbi-l5Y4oQkfPcXexf1gaEMuvfVPB6EeYqagqmy371mWIzRhQUN_52O_5enYU1SltGQ6mnlMM6Xn0aEoWK961CK7DXEguTgfPqr9qeUPuYr2mCJHOrhZPnNEtVo"/>
+</div>
+<!-- Overlapping Decorative Element -->
+<div class="absolute -bottom-10 -right-10 bg-surface-container-lowest p-8 shadow-sm hidden md:block max-w-[240px]">
+<p class="font-headline italic text-primary text-xl mb-2">L'ÉCLAT was born from a desire to return to the essence of gastronomy. We believe that true luxury lies in the purity of ingredients and the precision of the hand that prepares them.</p>
+<p class="text-xs font-label uppercase tracking-widest text-secondary">A Legacy of Excellence</p>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<span class="font-label uppercase tracking-[0.2em] text-primary mb-6 block text-sm">Our Heritage</span>
+<h2 class="font-headline text-5xl text-on-background mb-10 leading-tight">Crafting Moments <br/>Through Generations</h2>
+<div class="space-y-8 text-on-surface-variant font-light leading-relaxed text-lg">
+<p>L'ÉCLAT was born from a desire to return to the essence of gastronomy. We believe that true luxury lies in the purity of ingredients and the precision of the hand that prepares them.</p>
+<p>
+                            Nestled in the heart of the city, our sanctuary offers an escape into a world of sensory delight, where every detail—from the weight of the linen to the notes of the cellar—is orchestrated for your pleasure.
+                        </p>
+</div>
+<div class="mt-12 pt-12 border-t border-outline-variant/30 flex items-center gap-6">
+<div class="h-16 w-16 rounded-full overflow-hidden grayscale">
+<img alt="Executive Chef" data-alt="Portrait of a professional chef in white uniform with a serious yet welcoming expression, dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAssBuLj3p2EodsLDpy9FIkq51AcdzS3ACU5pXVNbrG_K-ihBmNto8WsvFbI0-zgG6eqRHen0O-5iTJQg7peWp_gW3kxsflbh6DTgKSx3HAfwFjzB5voTrqErlKpZz1hVciOvzqx43NvJ409lb1Z7dFo35-d1J3T8AOxS_q0MfLAMNCpDLu0LlmfQCvO4KmqDExDO0LZmH1TGebQ36QP-b05SPvMujFct7RXlH_lRFo_26-m8kiHKg5yuapFazrQd65q5E2Zlzn9Oc"/>
+</div>
+<div>
+<p class="font-headline italic text-xl">L'ÉCLAT was born from a desire to return to the essence of gastronomy. We believe that true luxury lies in the purity of ingredients and the precision of the hand that prepares them.</p>
+<p class="font-label uppercase tracking-widest text-[10px] text-secondary">Executive Chef &amp; Founder</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- A Taste of Perfection Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-24">
+<span class="font-label uppercase tracking-[0.2em] text-primary mb-6 block text-sm">The Curated Selection</span>
+<h2 class="font-headline text-5xl text-on-background">A Taste of Perfection</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-md mb-8">
+<img alt="Lobster Thermidor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-end presentation of lobster thermidor on a white porcelain plate with artistic garnish and micro-herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVUniD4KbeIt41f89hlzaT-AqoADJD54VhrT9tWy44Gyb6vp9rgE9LctDEgoY6fSR_gtEV-keX-bEbEBGiE-icvIey_EbrGwiu5RJQiwdwKBKbDjfJrkNwiLxset6lsVqYI0y2V_zxt6kWJToMupYdthZeSkaHB7dLEtyT3pPDyVnMmUI1b_xVscmkFHCzLDM3AUTBasDOCrn2CU-C33EbHtOhk95mGPI_aazxIaQaqcPLqcC0wZaWv4jGqfl0M0aGglI49gjkJf0"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl group-hover:text-primary transition-colors">Coastal Majesty</h3>
+<span class="font-headline text-primary text-xl">€68</span>
+</div>
+<p class="text-on-surface-variant font-light leading-relaxed">Butter-poached blue lobster, saffron-infused foam, and young spring peas from our garden.</p>
+</div>
+<!-- Item 2 (Asymmetric shift) -->
+<div class="group cursor-pointer lg:mt-16">
+<div class="aspect-[3/4] overflow-hidden rounded-md mb-8">
+<img alt="Aged Wagyu" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Thin slices of premium Wagyu beef served on a dark slate with edible flowers and aged balsamic reduction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCki3qDtr9H388COHL6Qt4ltFPFHQq2jrIsKrUihmplHZgls0ycu4qIOLvUh-GNxhGjquTt45G86XdjUKEuNYFRcof-nbMDNXN1rM-C-XALAZaFhMBvTZeN3mDLAdkgnhCzFH4PsR23wWkWwWnf01miAISVGWCYXIDJpVX-v_JB78ChOtLOvMSXVbMdASEauUh3iGiPYYzyZ4lyRNHeR-NSakvyduwfGiyToy219mudJ3XrfR_UDdA4YLEzGJxA68-ulJa4heuAAm8"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl group-hover:text-primary transition-colors">Terroir Symphony</h3>
+<span class="font-headline text-primary text-xl">€82</span>
+</div>
+<p class="text-on-surface-variant font-light leading-relaxed">45-day dry-aged wagyu, smoked bone marrow, and wild forest mushrooms with truffle jus.</p>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-md mb-8">
+<img alt="White Chocolate Ganache" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exquisite white chocolate dessert shaped like a pearl sitting on a bed of citrus crumble and gold flakes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC63mJmluCoAKiDjH3Zy-slKgitLSEwxQKdKX9YR8hSnpIZiLlbDW6BptBWncidz5oRZIFaPKYSVMsOS_TfmXeK7MHl-mkUrxIgkVVAGlQtg8Bw6HWOqiT-9KbLtrKgsuTQYrTssbpMj2mOLPk-eN9b5sJloXZ0r6oZKVn_-GFywXMxEvZoedGHAveUpOXhU-nVjStFATCfExX9R7xevJe1Nc43-KjEqMuVvBvafFoSPe7hKBsEQBbm7gkWzTwQ3G8DldYZXo8Ch1Q"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl group-hover:text-primary transition-colors">The Pearl</h3>
+<span class="font-headline text-primary text-xl">€24</span>
+</div>
+<p class="text-on-surface-variant font-light leading-relaxed">White chocolate ganache sphere, yuzu heart, and almond praline sand with 24k gold leaf.</p>
+</div>
+</div>
+<div class="mt-24 text-center">
+<button class="font-label uppercase tracking-widest text-xs font-bold text-primary border-b-2 border-primary/20 pb-2 hover:border-primary transition-all">
+                        Explore Full Menu
+                    </button>
+</div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="relative py-40 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Dining Ambience" class="w-full h-full object-cover" data-alt="Blurry wide shot of a luxury dining room with golden warm lighting and people enjoying fine food, high contrast black and gold theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAclytN8d3a3XVQVOpb0bIl97o8sdAS53PuBQ-KN2mf3ATgQ-3YndZRU660aSwjuY8JYvI6ZdVgTumf46gY0C-TijxpjK7AzLg2VpjhvlKbKLZp71O1uqqKt59e3vCsIl8hpg8kOSw_DeMkAtCx2BUfnNyvymWVE4pGMOu27jOE2J59ivtjvLmmT7RzJhNht-qAi18YcITeuXRrITds0ewTJZFMmKn1-ywd8NLF31EF1EIRoJbFQaibBXD7H8_UfY69yWs2Adr4tB0"/>
+<div class="absolute inset-0 bg-on-background/80 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 text-center">
+<span class="font-label uppercase tracking-[0.4em] text-primary-fixed-dim mb-8 block text-sm">Your Table Awaits</span>
+<h2 class="font-headline text-5xl md:text-7xl text-surface-bright mb-12">Experience the <br/><span class="italic">Extraordinary</span></h2>
+<button class="bg-gold-gradient text-on-primary px-12 py-6 rounded-md font-label uppercase tracking-[0.2em] text-xs font-bold transition-all hover:scale-105 hover:brightness-110 shadow-2xl shadow-primary/20">
+                    Secure a Reservation
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-950 w-full pt-20 pb-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+<div class="space-y-6">
+<p class="text-lg font-headline text-zinc-900 dark:text-zinc-100">L'ÉCLAT</p>
+<p class="text-zinc-500 font-body text-sm leading-relaxed">
+                    Elevating the culinary landscape with devotion and artistry since 1984. 
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">language</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">restaurant</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">wine_bar</span>
+</div>
+</div>
+<div>
+<p class="font-headline italic text-primary mb-6">Explore</p>
+<ul class="space-y-4">
+<li><a class="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="#">Our Story</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="#">The Menu</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="#">Gift Cards</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<p class="font-headline italic text-primary mb-6">Contact</p>
+<ul class="space-y-4 text-zinc-500 font-body text-sm">
+<li>127 Avenue de l'Opéra</li>
+<li>75002 Paris, France</li>
+<li>+33 (0) 1 42 36 00 00</li>
+<li>reservations@leclat.com</li>
+</ul>
+</div>
+<div>
+<p class="font-headline italic text-primary mb-6">Newsletter</p>
+<p class="text-zinc-500 text-xs mb-4 font-body leading-relaxed">Join our inner circle for exclusive updates and seasonal previews.</p>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-outline-variant py-2 pr-10 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 bottom-2 text-primary">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-label tracking-widest text-zinc-400 uppercase">© 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="text-[10px] font-label tracking-widest text-zinc-500 hover:text-primary transition-colors uppercase" href="#">Privacy Policy</a>
+<a class="text-[10px] font-label tracking-widest text-zinc-500 hover:text-primary transition-colors uppercase" href="#">Terms of Service</a>
+<a class="text-[10px] font-label tracking-widest text-zinc-500 hover:text-primary transition-colors uppercase" href="#">Press</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'ÉCLAT | The Gallery of Gastronomy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#1c1c19",
+              "surface-tint": "#775a19",
+              "inverse-primary": "#e9c176",
+              "on-surface-variant": "#4d4635",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#474747",
+              "secondary-container": "#e4e2e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "background": "#faf9f6",
+              "primary-fixed": "#ffdea5",
+              "outline-variant": "#d0c5af",
+              "tertiary-fixed": "#e5e2dd",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#5b4000",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-container-high": "#e9e8e5",
+              "primary": "#775a19",
+              "on-surface": "#1a1c1a",
+              "secondary": "#5f5e5e",
+              "on-primary-fixed": "#261900",
+              "surface-container-low": "#f4f3f1",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#e9c176",
+              "surface-bright": "#faf9f6",
+              "inverse-surface": "#2f312f",
+              "on-secondary-container": "#656464",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e3e2e0",
+              "tertiary": "#5f5e5b",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-tertiary-container": "#464542",
+              "on-error": "#ffffff",
+              "outline": "#7f7663",
+              "surface-container": "#efeeeb",
+              "surface-container-highest": "#e3e2e0",
+              "inverse-on-surface": "#f2f1ee",
+              "primary-container": "#d4ad65",
+              "surface": "#faf9f6",
+              "on-background": "#1a1c1a",
+              "secondary-fixed": "#e4e2e1",
+              "tertiary-fixed-dim": "#c9c6c2",
+              "tertiary-container": "#b5b3ae",
+              "on-tertiary-fixed-variant": "#474743",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+      body { background-color: #faf9f6; color: #1a1c1a; font-family: 'Manrope', sans-serif; }
+      .font-serif { font-family: 'Noto Serif', serif; }
+      .gallery-item:hover img { transform: scale(1.05); }
+      .gallery-item:hover .overlay { opacity: 1; }
+      .parallax-cta { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-zinc-900/80 backdrop-blur-xl border-b border-outline-variant/10">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4 md:py-6">
+<div class="text-2xl font-serif tracking-tighter text-amber-800 dark:text-amber-200 uppercase">LECLAT</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors manrope uppercase tracking-widest text-xs" href="#">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors manrope uppercase tracking-widest text-xs" href="#">Menu</a>
+<a class="text-amber-700 dark:text-amber-500 border-b border-amber-700/30 pb-1 manrope uppercase tracking-widest text-xs" href="#">Gallery</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors manrope uppercase tracking-widest text-xs" href="#">Location</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest transition-all hover:bg-primary/90 active:scale-95">
+                Book a Table
+            </button>
+</nav>
+</header>
+<main class="pt-24 md:pt-28">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-20 md:mb-24">
+<div class="flex flex-col items-start gap-4 mb-10 md:mb-12">
+<span class="font-label text-xs uppercase tracking-[0.4em] text-primary">A Visual Narrative</span>
+<h1 class="font-serif text-6xl md:text-8xl leading-none tracking-tighter">Artistry <br/><span class="italic ml-12 md:ml-32">on a Plate</span></h1>
+</div>
+<div class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden rounded-sm group">
+<img alt="Gourmet dish" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOKLfKidMQ9r0XhbHuuRWGaXBSKxN4BK4c0i_q7LY4skshQpbYqU7_RTXFMMezQ2pNQYrqWO5B6lRkwS3ugWpZEeQC88rSBNapuTdvE-3Sl-_6J5wHjG6Lvuai17GKYli3VNPxVjk30vvgI2aIA5vIwmsYFejfy7-3In68TerO3VW_yfisLc4EMUw8en4t5YGHlR0ZUWGRmHFX8ZuvC9wNtUIND1P02-Ekv6xtFNur5VB86rE3nRyb4TlZE4Q8aiKUKCQzxmcBRnU"/>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute bottom-8 right-8 bg-white p-6 md:p-10 max-w-sm shadow-2xl border-l-4 border-primary">
+<p class="font-serif italic text-xl md:text-2xl leading-relaxed text-zinc-900">"Atmosphere is the secret ingredient that turns a meal into a lasting memory."</p>
+<div class="mt-4 md:mt-6 flex items-center gap-4">
+<span class="w-12 h-px bg-primary"></span>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">The Vision</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Gallery Grid -->
+<section class="max-w-7xl mx-auto px-8 space-y-24 md:space-y-32 pb-24 md:pb-32">
+<!-- Row 1: The Sanctuary (Offset Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+<div class="md:col-span-7 relative group overflow-hidden gallery-item">
+<img alt="Dining Room" class="w-full aspect-[4/5] object-cover rounded-sm transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxKIk1b2qh9OgfcFiw8RDoDa7wit_Ig1lgb39PLiXHaC3KG3qvdZSrxwbhOZLIuyb9JRwLn6G3rsHv6oobjS3v8a4XsgNpEkOewa8SJC9krKVVZcGZfFWz069j_lL39Wr3gIrXxaKEq2mlQr41vAsg96MGDCiB74PYwHDflBGRg4Z_a9LrHiKL7DE9PjfLvU0xwgC905LhzhOyLWLAToAq-VQubW2eASLkdj77ov1zTlo0ZSerwqHW26alQeOM1wJRAHfgFcWd-4g"/>
+<div class="overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+<span class="font-label text-xs text-on-primary uppercase tracking-widest bg-primary px-6 py-3">Explore the Room</span>
+</div>
+</div>
+<div class="md:col-span-5 md:pl-12 space-y-8 md:space-y-12">
+<div class="space-y-6">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary">Environment</span>
+<h2 class="font-serif text-4xl md:text-5xl leading-tight">The Sanctuary of <br/>Silent Luxury</h2>
+<p class="font-body text-secondary text-base md:text-lg leading-relaxed">A space designed to silence the world outside, where every candle flicker is a choreographed note in your evening's symphony.</p>
+</div>
+<div class="relative group overflow-hidden gallery-item">
+<img alt="Wine Cellar" class="w-full aspect-video md:aspect-square object-cover rounded-sm transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU-LdDMWRBsTrxSWx7wYY4dMpcDyy2dUPY0Gr9rCh3UncK85XfAtgR0itOnSphj2v_kaev1bUSSFDm_cYyAoQq609dqjcftJBDjVhSitimXAk36pUM-_fSOGUhG1QzjvzPEZpyOoUSzdfuJSOPp16ZcBEBfMtVACZVfzIIwhVZVcbc4DN-UCEUCmfZNS1DvOrZ4oz2B3y1wCOqGB29z1iyrTlvHOXBoWrs5Dz0UgRijyFzsOPbhKQND4Cvaq5-7ggGEUtaKzTx-bI"/>
+<div class="overlay absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">wine_bar</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 2: Full Bleed Storytelling -->
+<div class="relative py-16 md:py-20 -mx-8 px-8 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-12 md:gap-16">
+<div class="md:col-span-8 relative z-10">
+<div class="relative gallery-item group overflow-hidden">
+<img alt="Chef Julian Saint-Clair preparing a signature dish with precision" class="w-full h-[500px] md:h-[600px] object-cover rounded-sm shadow-2xl transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX5focX3Xv4ND-1y46H1ufcNTzEhiV8sgh4Sk0gutEK9qUsbuEF_xFijg7Q1jGj4lMPTCH-1ooVEQUyHOOkotheFAbTnUdU0bCqs9OchBlnU49J3q-5fb6_FJoGmAjUcmJa064Hq7PD0NewHGRk66tnbzow7DpsdOPZnGQzg_la6oT9M5bR-2i6Q6gIo4QUNHLVO_lEYzr1EHPN3mdBiWB6GviKRdPPpMl2_QP-UnZVrvu4IOPdGUb9MgeCpW_lPOHwxQxi9TmvzI"/>
+</div>
+</div>
+<div class="md:col-span-4 space-y-8">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary">Mastery</span>
+<h3 class="font-serif text-4xl md:text-5xl leading-tight">The Alchemy of Pure Passion</h3>
+<p class="font-body text-secondary text-base md:text-lg leading-relaxed">Guided by executive chef Julian Saint-Clair, our kitchen operates with the precision of a Swiss watch and the soul of a poet. Every plate is a signature, every garnish a final stanza.</p>
+<a class="inline-flex items-center gap-4 font-label text-xs font-bold uppercase tracking-widest text-primary border-b-2 border-primary/20 pb-2 hover:border-primary transition-all group" href="#">
+                            Meet the Artisans
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Decorative Large Number -->
+<span class="absolute -bottom-10 md:-bottom-20 -right-10 font-serif text-[12rem] md:text-[20rem] text-surface-container opacity-30 select-none pointer-events-none">02</span>
+</div>
+<!-- Row 3: Detail Masonry & White Space -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+<div class="space-y-8 md:space-y-12">
+<div class="gallery-item relative overflow-hidden group">
+<img alt="Intricate plating detail" class="w-full aspect-[3/4] object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeElEnpBsLSMA11dPfs0zwWmQjuDqTiDIvKwko3ty1rU9k07WLj-4jEVZTGLi4UrYFk5p4wqCMoqh3_HsOq10G9X2jaXYqBPpwSr4PRioAxacmAFI8yChqdk7u46OAZP5ke2r9dA_HvVtSbrdnDSfyXIE2QZhCHYg_Bkzdu9sa4iM2H-S0e6rOiMDEcLBkTTpzgkiR2bJ--5U10_q0lCLSpUXD-Fcx19RxGTXUuqFseSg0iQ_lEiMjCg0OhcVps9utzARPrK596-w"/>
+<div class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col items-center justify-center p-8 text-center">
+<p class="text-white font-serif italic text-xl mb-4">"The canvas of flavor"</p>
+<span class="w-10 h-px bg-white/50"></span>
+</div>
+</div>
+<div class="p-8 md:p-12 border-l border-outline-variant/30 bg-surface-container-lowest">
+<p class="font-serif italic text-xl md:text-2xl leading-relaxed text-primary">"Gastronomy is the divine art of transmuting ingredients into pure emotion."</p>
+</div>
+</div>
+<div class="space-y-8 md:space-y-12 md:pt-16">
+<div class="gallery-item relative overflow-hidden group">
+<img alt="Elegant champagne service" class="w-full aspect-[3/4] object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAupzioygZENulPUIDu63kHLR04taTEmqwsTK5dv5-xRfEU5hU6Akeu_uhvmiYqXTRAUqbvXSAo6yS1fJTfqPcIE-BgZNRaYamAu047fvfNt1XvbMzhlqrVRXB9b6u8AWnrB7G6utM-BwprCgxv2YiwgdrA3MCPTLB4-_3Cpb9pKacAxdWLnB90dJvpfLaAGUMGyAjbhqRz50QgW_zGG_BVCnNcuNzetFuGY9Z2nQuTe9MmO79FFNGpY0dE0Hu3YgrXk5I6vWfsP8Y"/>
+<div class="overlay absolute inset-0 bg-amber-900/10 opacity-0 transition-opacity duration-500"></div>
+</div>
+<div class="gallery-item relative overflow-hidden group">
+<img alt="Exquisite dessert presentation" class="w-full aspect-square object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGyUfRmx4z5jjUcRtT8rEaKME6pS5-ZLfJVQXfIEdxk8oIJpBdDxhx-nj16RcRQ7eW8s6G_C4kfB0NzZyAbmxVVHQ9a8Qfe0ZhHo6KfBOQJHiqKMKcpSxz02RhYkZIm4pCOEmkgJtT5vBewPKFc_aa0sZY3AhT7N3luaJewteeHyTVBGuajfxFR5YNaV8qu5zRCoaRxun6aRlirvo-BnM9a9rO1fKM54ipi0RaisTO311BofCwRywZh8MNj7Dxgpcj9Z6UVHsez6Y"/>
+<div class="overlay absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+<span class="font-label text-[10px] text-white uppercase tracking-[0.4em] border border-white/40 px-4 py-2">The Sweet Finale</span>
+</div>
+</div>
+</div>
+<div class="space-y-8 md:space-y-12">
+<div class="gallery-item relative overflow-hidden group">
+<img alt="Gourmet roast meat dish" class="w-full aspect-[4/5] object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjzw9lq5EuZG-qNEbjFK-UsYGndPCn4mhr0l4_jaFdachKJv5E5JpXy4TiPfJF85vbZSld2BLMIGxzG7lKjfs7hidXseJKYTs9FQunutKg3ime-D8QzwN5vXDlD_zLJEEXxA1FIurHoZT_ye1BGVs0xNAQze4bMrm4i9ChWQtmIXz13O6zYD-BXCqVMhsTtO2526RKnw7LLkb6Wm08PudO_B7AMuhs_RNHr5sfsXIRaQ8r48kcRpjM1rMbZtRjKM0jpm3coHcL4Zc"/>
+</div>
+<div class="flex flex-col items-end gap-4 text-right">
+<span class="font-serif text-7xl md:text-8xl text-outline-variant/20 select-none">03</span>
+<p class="font-body text-secondary text-sm max-w-[200px]">The interplay of texture and temperature, captured in a single frame.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Banner -->
+<section class="bg-surface-container-highest py-24 md:py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+<div class="space-y-8 md:space-y-10">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary">Curated Atmosphere</span>
+<h2 class="font-serif text-5xl md:text-6xl leading-tight">A Symphony <br/>of Senses</h2>
+<p class="font-body text-secondary text-lg md:text-xl leading-relaxed">From the tactile grain of our bespoke furniture to the acoustic resonance of our dining hall, we curate the "vibe" as carefully as we curate our rare vintages.</p>
+<button class="px-10 py-4 border border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">
+                            Our Philosophy
+                        </button>
+</div>
+<div class="relative group">
+<div class="absolute -top-16 -left-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="gallery-item relative overflow-hidden rounded-sm shadow-2xl">
+<img alt="Expert cocktail service with aromatic garnishes" class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGh5UC4fqdf8LHVx65eznMhVAZ_VnZqpFbRMV6GENwUUNc08QSYZz8_wskJN5Vn5E_RI405JCwvXz5t82nnPUK1k-4fsPgA2TlNnL6oVwgp2YNY9X_PgBavXWKNavKVXApiWOGAvvMvwdIZKIMgtWcxnvRtJkP-J0buNVPuNHW_xD-WHPLp0EUhvcdlr4b38PRCCFLeX4z1Z6cyCiTo_PQG1meEkpYzAhQ0wDWzzG1ARwR2jC2-HcRU9fT_tzFyjUmjQ7v-xIQDdk"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Refined High-Converting CTA -->
+<section class="relative h-[80vh] flex items-center justify-center text-center parallax-cta" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6UwpuJR5gF9jU6LGG7PUbIWCSGcQ-1BKoZR_Q0AIkTJdoEOk7MrWGoaDCTUIZS-S0ruXgSLlBbPmHoAK9E2nArO97i-o2EjKahXwooKe934YkK-jiDa909Xwu5SZBVZvaEsPC3Dp9RpAwqJ9OJhQRtZhvc_8ycVfPFYsidqj7Fvhp6w57qDQ7VfGbWo6QZQecMylmfG8MusZvXjnLdpaHE_6gdXAbrbZPUD9FZd4WFos5F9ClgU5CPNu9JFKc-wvqHZBj2xETO-8');">
+<div class="relative z-10 px-8 max-w-4xl space-y-10 md:space-y-12">
+<div class="space-y-6">
+<span class="font-label text-xs uppercase tracking-[0.5em] text-primary-fixed block">Final Chapter</span>
+<h2 class="font-serif text-5xl md:text-8xl text-white leading-tight">Your Table is Waiting.</h2>
+<p class="text-white/70 font-body text-lg md:text-xl tracking-wide max-w-2xl mx-auto">Reservations for the upcoming season are now open. Experience the radiance of true gastronomy.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="bg-primary hover:bg-primary-container text-on-primary px-16 py-6 rounded-sm font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 shadow-xl">
+                        Secure a Reservation
+                    </button>
+<a class="text-white font-label text-xs uppercase tracking-[0.3em] hover:text-primary transition-colors border-b border-white/20 pb-1" href="#">Check Availability</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-950 w-full pt-16 md:pt-24 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 max-w-7xl mx-auto px-8">
+<div class="space-y-8">
+<div class="text-xl font-serif text-zinc-900 dark:text-zinc-100 uppercase tracking-tighter">L'ÉCLAT</div>
+<p class="font-body text-sm text-zinc-500 leading-relaxed">An editorial journey through taste, light, and the art of fine dining. Paris • New York • Tokyo.</p>
+</div>
+<div class="space-y-6">
+<span class="font-serif italic text-primary block text-lg">Navigation</span>
+<ul class="space-y-3">
+<li><a class="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Home</a></li>
+<li><a class="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Our Menu</a></li>
+<li><a class="text-primary underline underline-offset-8 font-body font-bold text-sm" href="#">Gallery</a></li>
+<li><a class="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Reservations</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<span class="font-serif italic text-primary block text-lg">Legal</span>
+<ul class="space-y-3">
+<li><a class="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<span class="font-serif italic text-primary block text-lg">Follow Us</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary transition-colors" data-icon="camera">camera</span>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary transition-colors" data-icon="mail">mail</span>
+</div>
+<p class="font-body text-xs text-zinc-400 uppercase tracking-widest mt-6">128 Avenue des Champs-Élysées, Paris</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 md:mt-24 pt-8 border-t border-zinc-200 dark:border-zinc-800 text-center">
+<p class="font-body text-[10px] tracking-[0.4em] text-zinc-400 uppercase">© 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

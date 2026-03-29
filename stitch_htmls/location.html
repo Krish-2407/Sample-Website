@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#775a19",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#c9c6c2",
+              "surface-container-low": "#f4f3f1",
+              "surface-container-highest": "#e3e2e0",
+              "outline": "#7f7663",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dbdad7",
+              "secondary": "#5f5e5e",
+              "on-tertiary-fixed-variant": "#474743",
+              "secondary-fixed": "#e4e2e1",
+              "secondary-fixed-dim": "#c8c6c6",
+              "primary-fixed": "#ffdea5",
+              "inverse-surface": "#2f312f",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeeeb",
+              "surface-bright": "#faf9f6",
+              "on-secondary-fixed": "#1b1c1c",
+              "tertiary-fixed": "#e5e2dd",
+              "on-primary-fixed": "#261900",
+              "inverse-on-surface": "#f2f1ee",
+              "on-secondary-container": "#656464",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e9e8e5",
+              "on-surface-variant": "#4d4635",
+              "on-primary-container": "#5b4000",
+              "tertiary": "#5f5e5b",
+              "on-tertiary-container": "#464542",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#474747",
+              "tertiary-container": "#b5b3ae",
+              "surface": "#faf9f6",
+              "secondary-container": "#e4e2e1",
+              "background": "#faf9f6",
+              "on-surface": "#1a1c1a",
+              "outline-variant": "#d0c5af",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-variant": "#e3e2e0",
+              "inverse-primary": "#e9c176",
+              "on-tertiary-fixed": "#1c1c19",
+              "on-primary-fixed-variant": "#5d4201",
+              "primary-fixed-dim": "#e9c176",
+              "primary-container": "#d4ad65",
+              "on-background": "#1a1c1a",
+              "primary": "#775a19",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 100px -20px rgba(26, 28, 26, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<span class="text-2xl font-headline tracking-tighter text-amber-800 uppercase">L'ÉCLAT</span>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label uppercase tracking-widest text-xs text-zinc-600 hover:text-amber-800 transition-colors" href="#">Home</a>
+<a class="font-label uppercase tracking-widest text-xs text-zinc-600 hover:text-amber-800 transition-colors" href="#">Menu</a>
+<a class="font-label uppercase tracking-widest text-xs text-zinc-600 hover:text-amber-800 transition-colors" href="#">Gallery</a>
+<a class="font-label uppercase tracking-widest text-xs text-amber-700 border-b border-amber-700/30 pb-1" href="#">Location</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-label uppercase tracking-widest text-[10px] px-6 py-3 rounded-lg shadow-sm active:scale-95 transition-transform">
+                Book a Table
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-7 z-10">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-6 block">The Paris Sanctuary</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-[5rem] leading-[1.1] mb-8 text-on-surface">
+                        Our <span class="italic font-normal">Sanctuary</span>
+</h1>
+<p class="font-body text-lg text-secondary max-w-lg leading-relaxed">
+                        Nestled in the golden triangle of Paris, L'ÉCLAT offers a refined escape from the rhythmic pulse of the Avenue des Champs-Élysées.
+                    </p>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Luxurious golden facade of a high-end Parisian restaurant at dusk with soft glowing lanterns and architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnWhmxlczW-BdjhThwnDe9lJd-_ycqR4cXg5H7l2NzgwqiMlQT_4Gm-GfbtXr_rFDi-JNwr-ppal4unwDFaKThHVNd6q7puPo9kdvzPkQacdkLhytGDUOFjOMdpKwUGFVKDpo65s9FcgOEIhDRxLdGDHUocBn6npkps3aRCzMdeGx2gOR6yPjM4cPKJUXa3l9KPbdhoR0m8mmiNSGYenxDxarjXgSDSjYtO7UgRzYXpCiP0opW6lMKyl5baqOilq3UqVY5Mb8nfU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Details Grid -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
+<!-- Contact Column -->
+<div class="space-y-12">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary/60 mb-4 block">Direct Contact</span>
+<div class="space-y-4">
+<p class="font-headline text-2xl text-on-surface">+33 (0) 1 45 62 11 00</p>
+<p class="font-body text-secondary border-b border-outline-variant/30 pb-2 inline-block">concierge@leclat-gastronomy.fr</p>
+</div>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary/60 mb-4 block">The Address</span>
+<address class="not-italic font-headline text-2xl text-on-surface leading-snug">
+                                128 Avenue des Champs-Élysées<br/>
+                                75008 Paris, France
+                            </address>
+</div>
+</div>
+<!-- Hours Column -->
+<div class="md:col-span-2 bg-surface-container-lowest p-12 editorial-shadow rounded-lg">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary mb-8 block">Service Hours</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-8">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="font-label text-xs uppercase tracking-widest">Monday — Thursday</span>
+<span class="font-headline italic text-primary">12:00 — 23:00</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="font-label text-xs uppercase tracking-widest">Friday — Saturday</span>
+<span class="font-headline italic text-primary">12:00 — 00:00</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="font-label text-xs uppercase tracking-widest">Sunday Brunch</span>
+<span class="font-headline italic text-primary">11:00 — 16:00</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="font-label text-xs uppercase tracking-widest">Sunday Dinner</span>
+<span class="font-headline italic text-primary">19:00 — 22:30</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section (Asymmetric Editorial Style) -->
+<section class="py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-4 order-2 md:order-1">
+<h2 class="font-headline text-4xl mb-8">How to <span class="italic font-normal">Reach Us</span></h2>
+<div class="space-y-8">
+<div>
+<h3 class="font-label text-[11px] uppercase tracking-widest text-primary mb-2">Valet Service</h3>
+<p class="font-body text-sm leading-relaxed text-secondary">
+                                Private valet parking is available at the main entrance. For guests arriving with chauffeured services, a dedicated drop-off point is located at the side arcade.
+                            </p>
+</div>
+<div>
+<h3 class="font-label text-[11px] uppercase tracking-widest text-primary mb-2">Public Transport</h3>
+<p class="font-body text-sm leading-relaxed text-secondary">
+                                The nearest station is George V (Line 1), situated a mere two-minute stroll from our doorstep.
+                            </p>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 order-1 md:order-2">
+<div class="relative w-full aspect-[16/9] bg-surface-container rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105" data-alt="Clean and minimal light-themed map style illustration of Paris 8th arrondissement centered on Champs-Élysées with a gold pin icon" data-location="Paris, France" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA93ntpwALb8IMJAzLRhUp6bdoggWrKBkHNx7EiyX5IO407HZIEF5UnufzwdkqM_emrrXFpTnrzYRxD8BFVKgj__KTGpAFoYD87Eb-9l2blG_A3cQ9P1RM3wA3d2LvsAzu5sT3ZT2f8uTsCyRE12wNDrKHvFwgvUPpFXbL6Pys7QF4mzrKpCoeavXr0HT1MLwaLkPEfVPGaJ43_-xEwQla6DhI0d9qIWxUSeB7cMrMswjsAmgFbAKI-xO2CKWrOxtWrZZxas4DaaZk"/>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Arrival Gallery / Visual Storytelling -->
+<section class="pb-32">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="aspect-[3/4] overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Close up of a luxury restaurant entrance with polished brass handle and a subtle shadow cast on a limestone wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVxKktsy8LToEIdO5h4TLqBVGIgCE0kPqH9roRriGHXu5PiRAp3sCli1cdBa1dCPgAS8yu8kzcPIvgYuNNjnU6I6B18lIariAqIypoh_7yBiZWT7WHXMvnoPegpo4FYFrV5jgTuDRkaMaYPdtv5Jp15sXvDFxBxvg6RV_vDuGuPWWlUHXQtQGuvBN-kHm_QPLmHDMAM3b_WUSZ2pIWzF_ZocrRXfMhWeHGe4S-00RKEAu8n1YcysGXTB1R-rSzm9C78ZfZ6FxQ_M4"/>
+</div>
+<div class="aspect-[3/4] overflow-hidden rounded-lg mt-12">
+<img class="w-full h-full object-cover" data-alt="Iconic view of Eiffel Tower in the distance seen from a classic Parisian street during sunset with soft warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVMAa9XRmhI_364Xas28A_a919_YVbmIzdO0slo2RZl1BxiHE7heupmPlTQCn7YKsYgoyMdpRXTSw7UBdENtcKEAawAgXsMbyE58boNXjmfcP2DeHx5u7_kAE3tjQo5g-tjl--Fi8pD5bxbOI7C_vGTPr_5tKdFv2k2HrKu1yc3nisGTwu8ME-x5Yvfr06bpHO8NuotjiZLWdm3fakw97X8ameJIwpv3kDU2WtcJp4BUi4Ra9QysG6N5oW2oSkSd5ju-hcf1oWf5Q"/>
+</div>
+<div class="aspect-[3/4] overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Interior view of a high-end restaurant foyer with a large bouquet of white lilies in a crystal vase on a marble table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoT7F-EZJLZBCucKHJS4fiwhNnCOxZAS37jveZFIIk2tG4PpeXLgqwcJLgc_ZhcyAA0YJDWYjiXDXyoO3qw-pAt-DhhMm6tub37Akqm2xqw2c0jh_-0cbfVJ7cJ5C1Za-iuTSeNsLDPVPZebrCKmrilXU1VYwHDe9hQN_EOujw3sT6q25DQiuW6OiHPEFYGFsy5CR-W0w-JgfAGWfDSfsU5VUHElSs6Yx7MQXxyVL9LwKGfipnpJyO95ddERbZh86YqVi5XxAh61A"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-950 w-full pt-20 pb-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+<div class="md:col-span-1">
+<span class="text-lg font-headline text-zinc-900 dark:text-zinc-100 block mb-4 uppercase">L'ÉCLAT</span>
+<p class="font-body font-light text-zinc-500 text-sm leading-relaxed">
+                    Elevating the art of gastronomy to an unparalleled sensory experience in the heart of Paris.
+                </p>
+</div>
+<div class="space-y-4">
+<span class="font-headline italic text-amber-700 dark:text-amber-500 block">Experience</span>
+<ul class="space-y-2">
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Our Story</a></li>
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">The Menu</a></li>
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Private Events</a></li>
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Gift Cards</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<span class="font-headline italic text-amber-700 dark:text-amber-500 block">Legal</span>
+<ul class="space-y-2">
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Privacy Policy</a></li>
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Terms of Service</a></li>
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Careers</a></li>
+<li><a class="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Press</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<span class="font-headline italic text-amber-700 dark:text-amber-500 block">Social</span>
+<div class="flex space-x-4">
+<a class="text-zinc-500 hover:text-amber-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share_reviews</span>
+</a>
+<a class="text-zinc-500 hover:text-amber-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">camera_alt</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+<p class="text-[10px] font-label tracking-widest text-zinc-400 uppercase">
+                © 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.
+            </p>
+</div>
+</footer>
+</body></html>

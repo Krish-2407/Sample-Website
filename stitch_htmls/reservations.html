@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#1c1c19",
+              "surface-tint": "#775a19",
+              "inverse-primary": "#e9c176",
+              "on-surface-variant": "#4d4635",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#474747",
+              "secondary-container": "#e4e2e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "background": "#faf9f6",
+              "primary-fixed": "#ffdea5",
+              "outline-variant": "#d0c5af",
+              "tertiary-fixed": "#e5e2dd",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#5b4000",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-container-high": "#e9e8e5",
+              "primary": "#775a19",
+              "on-surface": "#1a1c1a",
+              "secondary": "#5f5e5e",
+              "on-primary-fixed": "#261900",
+              "surface-container-low": "#f4f3f1",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#e9c176",
+              "surface-bright": "#faf9f6",
+              "inverse-surface": "#2f312f",
+              "on-secondary-container": "#656464",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e3e2e0",
+              "tertiary": "#5f5e5b",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-tertiary-container": "#464542",
+              "on-error": "#ffffff",
+              "outline": "#7f7663",
+              "surface-container": "#efeeeb",
+              "surface-container-highest": "#e3e2e0",
+              "inverse-on-surface": "#f2f1ee",
+              "primary-container": "#d4ad65",
+              "surface": "#faf9f6",
+              "on-background": "#1a1c1a",
+              "secondary-fixed": "#e4e2e1",
+              "tertiary-fixed-dim": "#c9c6c2",
+              "tertiary-container": "#b5b3ae",
+              "on-tertiary-fixed-variant": "#474743",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #775a19 0%, #d4ad65 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- Top Navigation Bar (Shared Component Logic) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-zinc-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<span class="text-2xl font-serif tracking-tighter text-amber-800 dark:text-amber-200">L'ÉCLAT</span>
+<div class="hidden md:flex space-x-12">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Menu</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Gallery</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="#">Location</a>
+</div>
+<button class="luxury-gradient text-on-primary px-6 py-2 rounded-lg font-label uppercase tracking-widest text-[10px] font-bold transition-transform active:scale-95">Book a Table</button>
+</div>
+</nav>
+<main class="min-h-screen pt-32 pb-20 flex flex-col items-center">
+<!-- Editorial Header Section -->
+<header class="text-center max-w-3xl px-8 mb-16">
+<span class="font-label uppercase tracking-[0.3em] text-[10px] text-primary mb-4 block">Reservations</span>
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface mb-6 tracking-tight leading-tight">Secure Your Table at L'ÉCLAT</h1>
+<p class="font-body text-secondary text-lg font-light leading-relaxed">
+            Join us for an unforgettable gastronomic journey where every detail is curated to perfection. Please note that cancellations must be made at least 24 hours in advance to avoid a service fee.
+        </p>
+</header>
+<!-- Reservation Canvas -->
+<div class="w-full max-w-5xl px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Side: Visual/Context (Chef's Highlight Style) -->
+<div class="lg:col-span-5 relative hidden lg:block h-[600px]">
+<div class="absolute inset-0 bg-surface-container-low rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Intimate view of a high-end restaurant table set with white linen, gold cutlery, and crystal glassware under soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYzU5l9PThKz7mkabipLJ-LAjXaNhRHJeFgfTbwa3p6s4d7zeXiaYf4TCdONyZcwv3FpKzTXiJpFkXhcyBZFzRvG1RyPGTxPGvK1PU5v8m9slDZ6xphKz93byKyATanxkWuEWcmCFs3kjYbx9vV5_ep3bFX7gQIafdqrhgx-yQ34qm54ijyegsJDUPhi3uPSKVSJolEtBxw0BRu3HB-5RprfWP_z7B_ArQTdxSwFrQlkqSyWi5TF51yKDPW1TZS3E3lVHjkNuRKic"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-surface-container-lowest p-10 shadow-sm max-w-[280px]">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="restaurant_menu">restaurant_menu</span>
+<h3 class="font-headline text-xl mb-2 italic">The Tasting Room</h3>
+<p class="font-body text-sm text-secondary font-light">Experience our chef's signature 9-course seasonal selection in an intimate setting.</p>
+</div>
+</div>
+<!-- Right Side: Reservation Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl">
+<form class="space-y-10">
+<!-- Row 1: Date & Time -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Date</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface placeholder-secondary/50" type="date"/>
+</div>
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Time</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface appearance-none">
+<option>18:00</option>
+<option>19:30</option>
+<option>20:45</option>
+<option>22:00</option>
+</select>
+</div>
+</div>
+<!-- Row 2: Guests & Occasion -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Number of Guests</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface appearance-none">
+<option>1 Guest</option>
+<option selected="">2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+<option>5+ (Contact us)</option>
+</select>
+</div>
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Occasion</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface appearance-none">
+<option>Select Occasion</option>
+<option>Anniversary</option>
+<option>Birthday</option>
+<option>Business Dinner</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<!-- Row 3: Special Requests -->
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Special Requests</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface placeholder-zinc-400" placeholder="Dietary requirements, seating preference..." rows="2"></textarea>
+</div>
+<!-- Policy Check -->
+<div class="flex items-start gap-3 pt-4">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-primary-container h-4 w-4" id="policy" type="checkbox"/>
+<label class="font-body text-xs text-secondary font-light leading-relaxed" for="policy">
+                        I understand and agree to the <a class="text-primary underline underline-offset-4" href="#">Cancellation Policy</a> and terms of service.
+                    </label>
+</div>
+<!-- Submit Action -->
+<div class="pt-8">
+<button class="w-full luxury-gradient text-on-primary font-label uppercase tracking-[0.2em] text-xs font-bold py-6 rounded-lg shadow-lg hover:brightness-105 transition-all active:scale-[0.98]" type="submit">
+                        Confirm Reservation
+                    </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-zinc-100 dark:bg-zinc-950 w-full pt-20 pb-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+<div class="space-y-6">
+<span class="text-lg font-serif text-zinc-900 dark:text-zinc-100">L'ÉCLAT</span>
+<p class="font-body font-light text-zinc-500 text-sm leading-relaxed">
+                Elevating gastronomy to an art form. Join us for a symphony of flavors in the heart of the culinary district.
+            </p>
+</div>
+<div>
+<span class="font-headline italic text-amber-700 dark:text-amber-500 block mb-6">Explore</span>
+<ul class="space-y-4">
+<li><a class="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<span class="font-headline italic text-amber-700 dark:text-amber-500 block mb-6">Company</span>
+<ul class="space-y-4">
+<li><a class="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="#">Careers</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="#">Press</a></li>
+</ul>
+</div>
+<div class="flex flex-col items-start md:items-end">
+<span class="font-headline italic text-amber-700 dark:text-amber-500 block mb-6">Follow Us</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-colors" data-icon="camera_alt">camera_alt</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 pt-20">
+<p class="font-body font-light text-[10px] tracking-widest text-zinc-400 uppercase">© 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>
