@@ -1,25 +1,10 @@
 import Link from "next/link";
+import HeaderNav from "../components/HeaderNav";
 
 export default function Menu() {
   return (
     <>
-      {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-300">
-        <div className="flex justify-between items-center px-8 py-6">
-          <Link className="text-2xl font-serif tracking-tighter text-amber-800" href="/">L'ÉCLAT</Link>
-          <div className="hidden md:flex items-center space-x-12">
-            <Link className="font-label uppercase tracking-widest text-xs text-zinc-600 hover:text-amber-800 transition-colors" href="/">Home</Link>
-            <Link className="font-label uppercase tracking-widest text-xs text-amber-700 border-b border-amber-700/30 pb-1" href="/menu">Menu</Link>
-            <Link className="font-label uppercase tracking-widest text-xs text-zinc-600 hover:text-amber-800 transition-colors" href="/gallery">Gallery</Link>
-            <Link className="font-label uppercase tracking-widest text-xs text-zinc-600 hover:text-amber-800 transition-colors" href="/location">Location</Link>
-          </div>
-          <Link href="/reservations">
-            <button className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-label text-xs uppercase tracking-widest hover:brightness-105 transition-all">
-              Book a Table
-            </button>
-          </Link>
-        </div>
-      </nav>
+      <HeaderNav activePage="menu" />
       <main className="pt-32 pb-20">
         {/* Hero Header */}
         <header className="px-8 mb-24">
@@ -243,6 +228,7 @@ export default function Menu() {
             <ul className="space-y-4">
               <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/menu">Menu</Link></li>
               <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/gallery">Gallery</Link></li>
+              <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/philosophy">Philosophy</Link></li>
               <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/location">Location</Link></li>
               <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/reservations">Reservations</Link></li>
             </ul>

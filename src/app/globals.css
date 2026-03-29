@@ -66,4 +66,17 @@
   .bg-gold-gradient {
     background: linear-gradient(135deg, #775a19 0%, #d4ad65 100%);
   }
+  .editorial-shadow {
+    box-shadow: 0 40px 80px -20px rgba(26, 28, 26, 0.08);
+  }
+  .text-stroke {
+    -webkit-text-stroke: 1px #775a19;
+    color: transparent;
+  }
+  .parallax-overlap {
+    transform: translateY(-10%);
+  }
+  .letter-spacing-extra {
+    letter-spacing: 0.35em;
+  }
 }

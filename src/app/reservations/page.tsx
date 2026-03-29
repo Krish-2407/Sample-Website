@@ -1,23 +1,10 @@
 import Link from "next/link";
+import HeaderNav from "../components/HeaderNav";
 
 export default function Reservations() {
   return (
     <>
-      {/* Top Navigation Bar (Shared Component Logic) */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-zinc-900/80 backdrop-blur-xl">
-        <div className="flex justify-between items-center px-8 py-6">
-          <Link className="text-2xl font-serif tracking-tighter text-amber-800 dark:text-amber-200" href="/">L'ÉCLAT</Link>
-          <div className="hidden md:flex space-x-12">
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/">Home</Link>
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/menu">Menu</Link>
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/gallery">Gallery</Link>
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/location">Location</Link>
-          </div>
-          <Link href="/reservations">
-            <button className="luxury-gradient text-on-primary px-6 py-2 rounded-lg font-label uppercase tracking-widest text-[10px] font-bold transition-transform active:scale-95">Book a Table</button>
-          </Link>
-        </div>
-      </nav>
+      <HeaderNav activePage="reservations" />
       
       <main className="min-h-screen pt-32 pb-20 flex flex-col items-center">
         {/* Editorial Header Section */}
@@ -127,6 +114,7 @@ export default function Reservations() {
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/">Home</Link></li>
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/menu">Menu</Link></li>
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/gallery">Gallery</Link></li>
+              <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/philosophy">Philosophy</Link></li>
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/location">Location</Link></li>
             </ul>
           </div>

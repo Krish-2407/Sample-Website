@@ -1,25 +1,10 @@
 import Link from "next/link";
+import HeaderNav from "./components/HeaderNav";
 
 export default function Home() {
   return (
     <>
-      {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-zinc-900/80 backdrop-blur-xl">
-        <div className="flex justify-between items-center px-8 py-6">
-          <Link className="text-2xl font-headline tracking-tighter text-amber-800 dark:text-amber-200" href="/">L'ÉCLAT</Link>
-          <div className="hidden md:flex items-center space-x-12">
-            <Link className="text-amber-700 dark:text-amber-500 border-b border-amber-700/30 pb-1 font-label uppercase tracking-widest text-xs" href="/">Home</Link>
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/menu">Menu</Link>
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/gallery">Gallery</Link>
-            <Link className="text-zinc-600 dark:text-zinc-400 hover:text-amber-800 transition-colors font-label uppercase tracking-widest text-xs" href="/location">Location</Link>
-          </div>
-          <Link href="/reservations">
-            <button className="bg-gold-gradient text-on-primary px-6 py-3 rounded-md font-label uppercase tracking-widest text-xs font-semibold shadow-sm hover:brightness-105 active:scale-95 transition-all">
-              Book a Table
-            </button>
-          </Link>
-        </div>
-      </nav>
+      <HeaderNav activePage="home" />
       <main>
         {/* Hero Section */}
         <section className="relative h-[921px] flex items-center overflow-hidden">
@@ -162,9 +147,9 @@ export default function Home() {
           <div>
             <p className="font-headline italic text-primary mb-6">Explore</p>
             <ul className="space-y-4">
-              <li><Link className="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="/">Our Story</Link></li>
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="/menu">The Menu</Link></li>
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="/gallery">Gallery</Link></li>
+              <li><Link className="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="/philosophy">Philosophy</Link></li>
               <li><Link className="text-zinc-500 hover:text-zinc-800 font-label text-xs uppercase tracking-widest transition-colors" href="/location">Location</Link></li>
             </ul>
           </div>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f4f3f1",
+              "on-secondary-fixed": "#1b1c1c",
+              "surface-tint": "#775a19",
+              "tertiary-fixed": "#e5e2dd",
+              "secondary-container": "#e4e2e1",
+              "on-error": "#ffffff",
+              "surface-container": "#efeeeb",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#656464",
+              "inverse-primary": "#e9c176",
+              "primary-fixed": "#ffdea5",
+              "on-background": "#1a1c1a",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#1c1c19",
+              "background": "#faf9f6",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#5b4000",
+              "surface-container-high": "#e9e8e5",
+              "outline-variant": "#d0c5af",
+              "primary-container": "#d4ad65",
+              "tertiary-container": "#b5b3ae",
+              "surface-bright": "#faf9f6",
+              "on-secondary-fixed-variant": "#474747",
+              "on-primary-fixed": "#261900",
+              "tertiary-fixed-dim": "#c9c6c2",
+              "surface-variant": "#e3e2e0",
+              "secondary": "#5f5e5e",
+              "surface-dim": "#dbdad7",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#e9c176",
+              "outline": "#7f7663",
+              "on-tertiary-fixed-variant": "#474743",
+              "on-primary-fixed-variant": "#5d4201",
+              "tertiary": "#5f5e5b",
+              "on-surface-variant": "#4d4635",
+              "surface": "#faf9f6",
+              "primary": "#775a19",
+              "inverse-on-surface": "#f2f1ee",
+              "secondary-fixed": "#e4e2e1",
+              "on-error-container": "#93000a",
+              "on-surface": "#1a1c1a",
+              "surface-container-highest": "#e3e2e0",
+              "inverse-surface": "#2f312f",
+              "on-tertiary-container": "#464542",
+              "secondary-fixed-dim": "#c8c6c6",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"],
+              "notoSerif": ["Noto Serif"],
+              "manrope": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 80px -20px rgba(26, 28, 26, 0.08);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px #775a19;
+            color: transparent;
+        }
+        .parallax-overlap {
+            transform: translateY(-10%);
+        }
+        .letter-spacing-extra {
+            letter-spacing: 0.35em;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f6]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-xl flex justify-between items-center px-10 py-6">
+<div class="font-notoSerif text-2xl tracking-widest text-[#1a1c1a] dark:text-[#faf9f6]">L'ÉCLAT</div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="font-notoSerif uppercase tracking-[0.2em] text-sm text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Heritage</a>
+<a class="font-notoSerif uppercase tracking-[0.2em] text-sm text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Chef</a>
+<a class="font-notoSerif uppercase tracking-[0.2em] text-sm text-[#775a19] border-b border-[#775a19] pb-1" href="#">Philosophy</a>
+<a class="font-notoSerif uppercase tracking-[0.2em] text-sm text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Reservations</a>
+</nav>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 text-xs uppercase tracking-widest font-bold hover:brightness-105 active:scale-95 transition-all duration-300 rounded-lg">
+        Book a Table
+    </button>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero: Heritage & Vision -->
+<section class="relative py-24 md:py-40 px-6 md:px-20 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-6 z-10">
+<span class="label-md uppercase tracking-[0.4em] text-primary mb-8 block font-semibold text-xs">Heritage &amp; Vision</span>
+<h1 class="font-notoSerif text-6xl md:text-8xl lg:text-9xl text-on-surface leading-[0.9] mb-12 tracking-tight">
+                    The <br/><span class="italic font-normal">Soul</span> of the <br/>Atelier
+                </h1>
+<div class="flex flex-col md:flex-row gap-10 items-start">
+<div class="w-px h-24 bg-primary/30 hidden md:block"></div>
+<p class="font-manrope text-lg text-on-surface-variant max-w-sm leading-relaxed opacity-80">
+                        Founded in 2012, L'Éclat is more than a restaurant. It is a sanctuary for the senses where French culinary heritage meets a vision of purity.
+                    </p>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<div class="relative aspect-[4/5] w-full overflow-hidden rounded-xl editorial-shadow">
+<img alt="Heritage Dining" class="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[2s]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi8OCKSjFwNVrVv7jY2sXSVevi4TwxiZ2PZ3irerSbyWt-Y3PSmb4V8v_dC2a1cExrW1doj2Z9TXegsorxe6eZHLaUf0-WJfA77FvcyObu5csFxoaiY8oQeUDQ3CoWTYCw3t8LYW5XSN-goSsXLQ4VNBoyOlA3IDjLc6Zk4oydn8ObSxiV6L6k9D8A6ASS2tMxGNHSZBDaKdWRkzd1XLPHxz4Dp32SWMxa1d73Qo1YVgGTdMHjqU_6G4p_UtKqCBCL8m3yH2FfXDY"/>
+</div>
+<!-- Overlapping Element -->
+<div class="absolute -bottom-16 -right-8 md:-right-16 bg-surface-container-lowest p-10 md:p-14 editorial-shadow rounded-xl max-w-xs hidden md:block z-20">
+<span class="font-notoSerif italic text-primary text-4xl block mb-4">"</span>
+<p class="font-notoSerif italic text-xl text-on-surface leading-snug">
+                        A return to the essence of the plate, where every ingredient tells a century-old story.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Philosophy: Minimalist Icons & Elegant Numbers -->
+<section class="bg-surface-container-low py-40 px-6 md:px-20 relative border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<span class="font-notoSerif italic text-primary text-xl mb-4 block">Our Philosophy</span>
+<h2 class="font-notoSerif text-5xl md:text-6xl text-on-surface">The Three Pillars</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+<div class="group">
+<div class="mb-10 flex items-center justify-between">
+<span class="text-6xl font-notoSerif text-primary/10 group-hover:text-primary/30 transition-colors duration-500">01</span>
+<span class="material-symbols-outlined text-primary text-4xl opacity-40 group-hover:opacity-100 transition-opacity" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<h3 class="font-notoSerif text-2xl mb-6">Regenerative Sourcing</h3>
+<p class="font-manrope text-on-surface-variant leading-relaxed text-base opacity-80">
+                        We collaborate exclusively with independent farmers who treat the soil as a living legacy, ensuring every harvest is a gift of nature.
+                    </p>
+</div>
+<div class="group md:mt-16">
+<div class="mb-10 flex items-center justify-between">
+<span class="text-6xl font-notoSerif text-primary/10 group-hover:text-primary/30 transition-colors duration-500">02</span>
+<span class="material-symbols-outlined text-primary text-4xl opacity-40 group-hover:opacity-100 transition-opacity" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-notoSerif text-2xl mb-6">Mathematical Finesse</h3>
+<p class="font-manrope text-on-surface-variant leading-relaxed text-base opacity-80">
+                        Our techniques are precise, rooted in the chemistry of flavor but guided by the intuition of the artisan's hand.
+                    </p>
+</div>
+<div class="group">
+<div class="mb-10 flex items-center justify-between">
+<span class="text-6xl font-notoSerif text-primary/10 group-hover:text-primary/30 transition-colors duration-500">03</span>
+<span class="material-symbols-outlined text-primary text-4xl opacity-40 group-hover:opacity-100 transition-opacity" data-icon="palette">palette</span>
+</div>
+<h3 class="font-notoSerif text-2xl mb-6">Culinary Composition</h3>
+<p class="font-manrope text-on-surface-variant leading-relaxed text-base opacity-80">
+                        A dish is a canvas. We curate textures, temperatures, and tones to create a sensory landscape that lingers in the memory.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Chef: Immersive Vision -->
+<section class="py-0 px-6 md:px-0 bg-on-background text-surface relative overflow-hidden">
+<div class="flex flex-col lg:flex-row">
+<!-- Large Scale Portrait -->
+<div class="w-full lg:w-1/2 h-[700px] lg:h-screen sticky top-0">
+<img alt="Chef Julian Saint-Clair" class="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-[2.5s]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg_79S7P8n_Q-4qXfoo4Nw-NOouQPIwbOOQ18kdRb6ldBWnOOo_boLOhEoFzkPnYMxLkgLUnzxeqmp50ANXMYDilTsKwWBVfuZXClnrsxlf5J17jdTc87PZjN8nLvpsoA0guHtXbsoXtXYpiqxYDqmKBJBkzt-Zam_73phc6NQikFbLrz0udDtEEy4-Wpl2B1ZgLfkzM7MQUahjDTkI82WSLUahiguXJfq1SSwAxRI6Wbn6c3T8hqEgN_mjfdajw1LbwdbuzMUX8U"/>
+<div class="absolute bottom-10 left-10 z-20 hidden md:block">
+<span class="font-notoSerif italic text-primary-container/60 text-sm tracking-widest uppercase">Master of the Craft</span>
+</div>
+</div>
+<!-- Immersive Quote & Text -->
+<div class="w-full lg:w-1/2 py-24 px-10 md:px-24 flex flex-col justify-center bg-on-background relative z-10">
+<div class="max-w-xl">
+<span class="label-md uppercase tracking-[0.4em] text-primary-container/40 mb-10 block text-xs">The Visionary</span>
+<h2 class="font-notoSerif text-5xl md:text-7xl mb-16 text-surface leading-tight">Julian <br/><span class="italic text-primary-container">Saint-Clair</span></h2>
+<div class="relative mb-20">
+<span class="absolute -top-12 -left-8 text-8xl font-notoSerif text-primary/20 opacity-30">“</span>
+<p class="font-notoSerif text-3xl md:text-4xl italic text-primary-container leading-snug relative z-10">
+                            Gastronomy is the only art form that engages all five senses simultaneously. My mission is to ensure they all leave with a memory.
+                        </p>
+</div>
+<p class="font-manrope text-lg text-surface/60 leading-relaxed mb-12 font-light">
+                        Trained in the Michelin-starred kitchens of Lyons and Tokyo, Chef Julian brings a unique technical mastery to L'Éclat. His vision is one of restraint—where the complexity of the dish lies hidden beneath a veneer of elegant simplicity.
+                    </p>
+<div class="flex items-center gap-6 group">
+<div class="w-12 h-px bg-primary transition-all duration-500 group-hover:w-20"></div>
+<span class="font-manrope font-bold text-xs uppercase tracking-widest text-primary-container">3 Michelin Stars since 2018</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline: Asymmetrical Layout -->
+<section class="bg-surface py-40 px-6 md:px-20">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+<div class="lg:col-span-4 sticky top-40">
+<h2 class="font-notoSerif text-6xl text-on-surface mb-8 tracking-tighter">A Legacy of <span class="italic font-normal">Excellence</span></h2>
+<p class="font-manrope text-on-surface-variant text-lg opacity-70">Tracing the lineage of our commitment to the avant-garde.</p>
+</div>
+<div class="lg:col-span-8 space-y-40">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row gap-12 items-center group">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="font-notoSerif text-7xl text-primary/10 group-hover:text-primary/30 transition-colors duration-700 block mb-6">2012</span>
+<h4 class="font-notoSerif text-2xl text-on-surface mb-4">The Genesis</h4>
+<p class="text-on-surface-variant font-manrope leading-relaxed opacity-80">
+                                L'Éclat opens its doors in a restored 19th-century atelier, driven by a desire to return to the architectural roots of French dining.
+                            </p>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2 aspect-[4/3] rounded-xl overflow-hidden editorial-shadow -rotate-2 group-hover:rotate-0 transition-transform duration-700">
+<img alt="The Genesis" class="w-full h-full object-cover grayscale brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxf7bUS8M1e93cLKNdbOHapiCq-PZZtDHtVXG7_AVqGPcHJKdB841zsu9eS0IKOpsKlp7Dc88Eks6_wZwCBXzRm5HYM0WglMgtk-m1uPM65_36PpV69SOd-Rk3UvPuFuwDVnm8R4yoCrSHyQjNg3pi3s33TS8tbXrBls_EVFcIABpGr6241tZeKnBanc1boj6Esc6aR98XGolRN5x7Jnk2cwRr-lUXWxRzpP_4HCSjw6DjvyaUYFeGfOVGL_vE5hcHHCHZkkRLb0A"/>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row gap-12 items-center group">
+<div class="w-full md:w-1/2 aspect-[4/3] rounded-xl overflow-hidden editorial-shadow rotate-2 group-hover:rotate-0 transition-transform duration-700">
+<img alt="The Recognition" class="w-full h-full object-cover brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi8OCKSjFwNVrVv7jY2sXSVevi4TwxiZ2PZ3irerSbyWt-Y3PSmb4V8v_dC2a1cExrW1doj2Z9TXegsorxe6eZHLaUf0-WJfA77FvcyObu5csFxoaiY8oQeUDQ3CoWTYCw3t8LYW5XSN-goSsXLQ4VNBoyOlA3IDjLc6Zk4oydn8ObSxiV6L6k9D8A6ASS2tMxGNHSZBDaKdWRkzd1XLPHxz4Dp32SWMxa1d73Qo1YVgGTdMHjqU_6G4p_UtKqCBCL8m3yH2FfXDY"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-notoSerif text-7xl text-primary/10 group-hover:text-primary/30 transition-colors duration-700 block mb-6">2016</span>
+<h4 class="font-notoSerif text-2xl text-on-surface mb-4">The First Star</h4>
+<p class="text-on-surface-variant font-manrope leading-relaxed opacity-80">
+                                Recognition from the culinary elite arrives. L'Éclat is praised for its "unflinching dedication to the purity of the ingredient."
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA: Magazine Style -->
+<section class="relative py-48 bg-on-background text-surface overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Ambiance" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACMHKdd7YANac_u9Ts7-vqE3Z9dVmpP0LujYB5XcqkNP-Uab2xKztbcMQ1UU4wwaWfCkHjg7C7Wjib0tRqcna8RSqSPMM75pDrDJS7y6_GeCkqkkleIRZTmGf6SgM5gmwnW8T5fyXdVgMpXe6K-qm9KPZBV8ZAiupyzeWetoAFi8M1nDvfnkqdK1-Jw_K_vVEOVW_jPacMwhvwMG1qkJRErjTjXlJNNcm0KPpjXuzVts0B88nzAhjpNjI9q6FLPJ2j5SOq660S9nI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 container mx-auto px-6 text-center">
+<span class="label-md uppercase tracking-[0.6em] text-primary-container mb-12 block text-xs">A Table Awaits</span>
+<h2 class="font-notoSerif text-6xl md:text-8xl lg:text-9xl mb-16 leading-none tracking-tight">Become Part of <br/><span class="italic text-primary-container">The Narrative</span></h2>
+<div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+<button class="bg-primary text-on-primary px-16 py-6 text-xs uppercase tracking-[0.3em] font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all duration-500 shadow-2xl">
+                    Book a Table
+                </button>
+<button class="border border-surface/20 text-surface px-16 py-6 text-xs uppercase tracking-[0.3em] font-bold rounded-lg hover:bg-surface hover:text-on-background transition-all duration-500">
+                    Explore The Menu
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-[#1a1c1a] w-full py-20 px-10 border-t border-[#d0c5af]/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-end w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-notoSerif text-xl text-[#1a1c1a] dark:text-[#faf9f6] tracking-widest">L'ÉCLAT</div>
+<p class="font-manrope text-[10px] tracking-[0.15em] uppercase text-[#1a1c1a] dark:text-[#faf9f6] opacity-50">
+                © 2024 L'ÉCLAT GASTRONOMIE. ALL RIGHTS RESERVED.
+            </p>
+</div>
+<div class="flex flex-wrap gap-8 justify-center md:justify-start">
+<a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-[#1a1c1a] dark:text-[#faf9f6] opacity-50 hover:text-[#775a19] transition-colors duration-500" href="#">Privacy Policy</a>
+<a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-[#1a1c1a] dark:text-[#faf9f6] opacity-50 hover:text-[#775a19] transition-colors duration-500" href="#">Press Kit</a>
+<a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-[#1a1c1a] dark:text-[#faf9f6] opacity-50 hover:text-[#775a19] transition-colors duration-500" href="#">Careers</a>
+<a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-[#1a1c1a] dark:text-[#faf9f6] opacity-50 hover:text-[#775a19] transition-colors duration-500" href="#">Location</a>
+</div>
+<div class="text-right flex flex-col items-end gap-4">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="share">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="public">public</span>
+</div>
+<span class="font-manrope text-[10px] tracking-[0.15em] uppercase text-primary">Paris • Tokyo • New York</span>
+</div>
+</div>
+</footer>
+</body></html>
