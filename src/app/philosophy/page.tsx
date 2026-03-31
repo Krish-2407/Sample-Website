@@ -1,24 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeaderNav from "../components/HeaderNav";
+import Footer from "../components/Footer";
 
 export default function Philosophy() {
   return (
     <>
-      <HeaderNav activePage="philosophy" />
+      <HeaderNav activePage="philosophy" theme="light" />
 
-      <main className="pt-24 overflow-x-hidden">
+      <main className="pt-20 md:pt-24 overflow-x-hidden">
         {/* Hero: Heritage & Vision */}
-        <section className="relative py-24 md:py-40 px-6 md:px-20 bg-surface overflow-hidden">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <section className="relative py-16 md:py-40 px-5 md:px-20 bg-surface overflow-hidden">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="lg:col-span-6 z-10">
-              <span className="font-label uppercase tracking-[0.4em] text-primary mb-8 block font-semibold text-xs">Heritage & Vision</span>
-              <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl text-on-surface leading-[0.9] mb-12 tracking-tight">
+              <span className="font-label uppercase tracking-[0.4em] text-primary mb-5 md:mb-8 block font-semibold text-xs">Heritage & Vision</span>
+              <h1 className="font-headline text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-on-surface leading-[0.9] mb-8 md:mb-12 tracking-tight">
                 The <br /><span className="italic font-normal">Soul</span> of the <br />Atelier
               </h1>
-              <div className="flex flex-col md:flex-row gap-10 items-start">
-                <div className="w-px h-24 bg-primary/30 hidden md:block"></div>
-                <p className="font-body text-lg text-on-surface-variant max-w-sm leading-relaxed opacity-80">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+                <div className="w-px h-16 md:h-24 bg-primary/30 hidden md:block"></div>
+                <p className="font-body text-sm md:text-lg text-on-surface-variant max-w-sm leading-relaxed opacity-80">
                   Founded in 2012, L'Éclat is more than a restaurant. It is a sanctuary for the senses where French culinary heritage meets a vision of purity.
                 </p>
               </div>
@@ -81,20 +82,20 @@ export default function Philosophy() {
         </section>
 
         {/* The Chef: Immersive Vision */}
-        <section className="py-0 px-6 md:px-0 bg-on-background text-surface relative overflow-hidden">
+        <section className="py-0 px-5 md:px-0 bg-on-background text-surface relative overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Large Scale Portrait */}
-            <div className="w-full lg:w-1/2 h-[700px] lg:h-screen sticky top-0">
+            <div className="w-full lg:w-1/2 h-[400px] lg:h-screen lg:sticky lg:top-0">
               <img alt="Chef Julian Saint-Clair" className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-[2.5s]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg_79S7P8n_Q-4qXfoo4Nw-NOouQPIwbOOQ18kdRb6ldBWnOOo_boLOhEoFzkPnYMxLkgLUnzxeqmp50ANXMYDilTsKwWBVfuZXClnrsxlf5J17jdTc87PZjN8nLvpsoA0guHtXbsoXtXYpiqxYDqmKBJBkzt-Zam_73phc6NQikFbLrz0udDtEEy4-Wpl2B1ZgLfkzM7MQUahjDTkI82WSLUahiguXJfq1SSwAxRI6Wbn6c3T8hqEgN_mjfdajw1LbwdbuzMUX8U" />
               <div className="absolute bottom-10 left-10 z-20 hidden md:block">
                 <span className="font-headline italic text-primary-container/60 text-sm tracking-widest uppercase">Master of the Craft</span>
               </div>
             </div>
             {/* Immersive Quote & Text */}
-            <div className="w-full lg:w-1/2 py-24 px-10 md:px-24 flex flex-col justify-center bg-on-background relative z-10">
+            <div className="w-full lg:w-1/2 py-16 md:py-24 px-5 md:px-24 flex flex-col justify-center bg-on-background relative z-10">
               <div className="max-w-xl">
-                <span className="font-label uppercase tracking-[0.4em] text-primary-container/40 mb-10 block text-xs">The Visionary</span>
-                <h2 className="font-headline text-5xl md:text-7xl mb-16 text-surface leading-tight">Julian <br /><span className="italic text-primary-container">Saint-Clair</span></h2>
+                <span className="font-label uppercase tracking-[0.4em] text-primary-container/40 mb-6 md:mb-10 block text-xs">The Visionary</span>
+                <h2 className="font-headline text-4xl md:text-7xl mb-10 md:mb-16 text-surface leading-tight">Julian <br /><span className="italic text-primary-container">Saint-Clair</span></h2>
                 <div className="relative mb-20">
                   <span className="absolute -top-12 -left-8 text-8xl font-headline text-primary/20 opacity-30">“</span>
                   <p className="font-headline text-3xl md:text-4xl italic text-primary-container leading-snug relative z-10">
@@ -154,7 +155,7 @@ export default function Philosophy() {
         </section>
 
         {/* Final CTA: Magazine Style */}
-        <section className="relative py-48 bg-on-background text-surface overflow-hidden">
+        <section className="relative py-24 md:py-48 bg-on-background text-surface overflow-hidden">
           <div className="absolute inset-0">
             <img alt="Ambiance" className="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACMHKdd7YANac_u9Ts7-vqE3Z9dVmpP0LujYB5XcqkNP-Uab2xKztbcMQ1UU4wwaWfCkHjg7C7Wjib0tRqcna8RSqSPMM75pDrDJS7y6_GeCkqkkleIRZTmGf6SgM5gmwnW8T5fyXdVgMpXe6K-qm9KPZBV8ZAiupyzeWetoAFi8M1nDvfnkqdK1-Jw_K_vVEOVW_jPacMwhvwMG1qkJRErjTjXlJNNcm0KPpjXuzVts0B88nzAhjpNjI9q6FLPJ2j5SOq660S9nI" />
             <div className="absolute inset-0 bg-gradient-to-t from-on-background via-transparent to-transparent"></div>
@@ -177,30 +178,7 @@ export default function Philosophy() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-surface-container-low dark:bg-zinc-900 w-full py-20 px-10 border-t border-outline-variant/20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end w-full max-w-7xl mx-auto">
-          <div className="flex flex-col gap-6">
-            <div className="font-headline text-xl text-on-surface dark:text-surface tracking-widest">L'ÉCLAT</div>
-            <p className="font-label text-[10px] tracking-[0.15em] uppercase text-on-surface dark:text-surface opacity-50">
-                © 2024 L'ÉCLAT GASTRONOMIE. ALL RIGHTS RESERVED.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-8 justify-center md:justify-start">
-            <a className="font-label text-[10px] tracking-[0.15em] uppercase text-on-surface dark:text-surface opacity-50 hover:text-primary transition-colors duration-500" href="#">Privacy Policy</a>
-            <a className="font-label text-[10px] tracking-[0.15em] uppercase text-on-surface dark:text-surface opacity-50 hover:text-primary transition-colors duration-500" href="#">Press Kit</a>
-            <a className="font-label text-[10px] tracking-[0.15em] uppercase text-on-surface dark:text-surface opacity-50 hover:text-primary transition-colors duration-500" href="#">Careers</a>
-            <Link className="font-label text-[10px] tracking-[0.15em] uppercase text-on-surface dark:text-surface opacity-50 hover:text-primary transition-colors duration-500" href="/location">Location</Link>
-          </div>
-          <div className="text-right flex flex-col items-end gap-4">
-            <div className="flex gap-4">
-              <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">share</span>
-              <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">public</span>
-            </div>
-            <span className="font-label text-[10px] tracking-[0.15em] uppercase text-primary">Paris • Tokyo • New York</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

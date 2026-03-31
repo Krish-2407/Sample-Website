@@ -1,36 +1,37 @@
 import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
+import Footer from "../components/Footer";
 
 export default function Location() {
   return (
     <>
-      <HeaderNav activePage="location" />
+      <HeaderNav activePage="location" theme="light" />
 
-      <main className="pt-32">
+      <main className="pt-20 md:pt-32">
         {/* Hero Section */}
-        <section className="px-8 mb-32">
-          <div className="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+        <section className="px-5 md:px-8 mb-16 md:mb-32">
+          <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end">
             <div className="md:col-span-7 z-10">
-              <span className="font-label text-xs uppercase tracking-[0.2em] text-primary mb-6 block">The Paris Sanctuary</span>
-              <h1 className="font-headline text-5xl md:text-7xl lg:text-[5rem] leading-[1.1] mb-8 text-on-surface">
+              <span className="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 md:mb-6 block">The Paris Sanctuary</span>
+              <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] leading-[1.1] mb-5 md:mb-8 text-on-surface">
                 Our <span className="italic font-normal">Sanctuary</span>
               </h1>
-              <p className="font-body text-lg text-secondary max-w-lg leading-relaxed">
-                Nestled in the golden triangle of Paris, L'ÉCLAT offers a refined escape from the rhythmic pulse of the Avenue des Champs-Élysées.
+              <p className="font-body text-sm md:text-lg text-secondary max-w-lg leading-relaxed">
+                Nestled in the golden triangle of Paris, L&apos;ÉCLAT offers a refined escape from the rhythmic pulse of the Avenue des Champs-Élysées.
               </p>
             </div>
             <div className="md:col-span-5 relative">
               <div className="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg">
-                <img className="w-full h-full object-cover" data-alt="Luxurious golden facade of a high-end Parisian restaurant at dusk with soft glowing lanterns and architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnWhmxlczW-BdjhThwnDe9lJd-_ycqR4cXg5H7l2NzgwqiMlQT_4Gm-GfbtXr_rFDi-JNwr-ppal4unwDFaKThHVNd6q7puPo9kdvzPkQacdkLhytGDUOFjOMdpKwUGFVKDpo65s9FcgOEIhDRxLdGDHUocBn6npkps3aRCzMdeGx2gOR6yPjM4cPKJUXa3l9KPbdhoR0m8mmiNSGYenxDxarjXgSDSjYtO7UgRzYXpCiP0opW6lMKyl5baqOilq3UqVY5Mb8nfU" />
+                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnWhmxlczW-BdjhThwnDe9lJd-_ycqR4cXg5H7l2NzgwqiMlQT_4Gm-GfbtXr_rFDi-JNwr-ppal4unwDFaKThHVNd6q7puPo9kdvzPkQacdkLhytGDUOFjOMdpKwUGFVKDpo65s9FcgOEIhDRxLdGDHUocBn6npkps3aRCzMdeGx2gOR6yPjM4cPKJUXa3l9KPbdhoR0m8mmiNSGYenxDxarjXgSDSjYtO7UgRzYXpCiP0opW6lMKyl5baqOilq3UqVY5Mb8nfU" />
               </div>
             </div>
           </div>
         </section>
 
         {/* Details Grid */}
-        <section className="bg-surface-container-low py-32">
-          <div className="px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
+        <section className="bg-surface-container-low py-16 md:py-32">
+          <div className="px-5 md:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-24">
               {/* Contact Column */}
               <div className="space-y-12">
                 <div>
@@ -124,52 +125,7 @@ export default function Location() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-zinc-100 dark:bg-zinc-950 w-full pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8">
-          <div className="md:col-span-1">
-            <span className="text-lg font-headline text-zinc-900 dark:text-zinc-100 block mb-4 uppercase">L'ÉCLAT</span>
-            <p className="font-body font-light text-zinc-500 text-sm leading-relaxed">
-              Elevating the art of gastronomy to an unparalleled sensory experience in the heart of Paris.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <span className="font-headline italic text-amber-700 dark:text-amber-500 block">Experience</span>
-            <ul className="space-y-2">
-              <li><Link className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="/">Home</Link></li>
-              <li><Link className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="/menu">Menu</Link></li>
-              <li><Link className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="/gallery">Gallery</Link></li>
-              <li><Link className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="/philosophy">Philosophy</Link></li>
-              <li><Link className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="/reservations">Reservations</Link></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <span className="font-headline italic text-amber-700 dark:text-amber-500 block">Legal</span>
-            <ul className="space-y-2">
-              <li><a className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Privacy Policy</a></li>
-              <li><a className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Terms of Service</a></li>
-              <li><a className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Careers</a></li>
-              <li><a className="font-body font-light text-zinc-500 hover:text-zinc-800 text-sm" href="#">Press</a></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <span className="font-headline italic text-amber-700 dark:text-amber-500 block">Social</span>
-            <div className="flex space-x-4">
-              <a className="text-zinc-500 hover:text-amber-700 transition-colors" href="#">
-                <span className="material-symbols-outlined text-xl">share_reviews</span>
-              </a>
-              <a className="text-zinc-500 hover:text-amber-700 transition-colors" href="#">
-                <span className="material-symbols-outlined text-xl">camera_alt</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="px-8 mt-20 pt-8 border-t border-zinc-200 dark:border-zinc-800">
-          <p className="text-[10px] font-label tracking-widest text-zinc-400 uppercase">
-            © 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -1,32 +1,28 @@
 import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
+import Footer from "../components/Footer";
 
 export default function Menu() {
   return (
     <>
-      <HeaderNav activePage="menu" />
-      <main className="pt-32 pb-20">
+      <HeaderNav activePage="menu" theme="light" />
+      <main className="pt-24 md:pt-32 pb-16 md:pb-20">
         {/* Hero Header */}
-        <header className="px-8 mb-24">
-          <div className="max-w-2xl">
-            <span className="font-label uppercase tracking-[0.2em] text-xs text-primary mb-4 block">Gastronomic Journey</span>
-            <h1 className="text-6xl md:text-7xl font-headline font-bold leading-tight mb-8 tracking-tighter">The Seasonal <span className="italic font-normal">Menu</span></h1>
-            <p className="font-body text-lg text-secondary leading-relaxed font-light">
-              A curated selection of seasonal flavors, meticulously crafted by our culinary artisans to celebrate the heritage of French haute cuisine.
-            </p>
+        <header className="px-5 md:px-8 mb-16 md:mb-24">
+          <span className="font-label uppercase tracking-[0.2em] text-xs text-primary mb-4 block">Gastronomic Journey</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold leading-tight mb-6 md:mb-8 tracking-tighter">The Seasonal <span className="italic font-normal">Menu</span></h1>
+          <p className="font-body text-sm md:text-lg text-secondary leading-relaxed font-light max-w-xl">
+            A curated selection of seasonal flavors, meticulously crafted by our culinary artisans to celebrate the heritage of French haute cuisine.
+          </p>
+          <div className="flex flex-wrap gap-4 md:gap-8 overflow-x-auto pb-2 mt-8 md:mt-12">
+            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-zinc-400 hover:text-primary transition-colors whitespace-nowrap" href="#entrees">01. Appetizers</a>
+            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-primary transition-colors whitespace-nowrap" href="#plats">02. Main Courses</a>
+            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-zinc-400 hover:text-primary transition-colors whitespace-nowrap" href="#desserts">03. Desserts</a>
+            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-zinc-400 hover:text-primary transition-colors whitespace-nowrap" href="#vins">04. Wines &amp; Spirits</a>
           </div>
         </header>
-        {/* Categories Navigation / Filter */}
-        <div className="px-8 mb-16 overflow-x-auto">
-          <div className="flex space-x-10 border-b border-outline-variant/20 pb-4 min-w-max">
-            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-primary font-bold" href="#entrees">01. Appetizers</a>
-            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-zinc-400 hover:text-primary transition-colors" href="#plats">02. Main Courses</a>
-            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-zinc-400 hover:text-primary transition-colors" href="#desserts">03. Desserts</a>
-            <a className="font-label uppercase text-[10px] tracking-[0.2em] text-zinc-400 hover:text-primary transition-colors" href="#vins">04. Wines &amp; Spirits</a>
-          </div>
-        </div>
         {/* Menu Section: Entrées */}
-        <section className="px-8 mb-32" id="entrees">
+        <section className="px-5 md:px-8 mb-16 md:mb-32" id="entrees">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-4 order-2 lg:order-1">
               <h2 className="text-4xl font-headline mb-12">Appetizers</h2>
@@ -55,7 +51,7 @@ export default function Menu() {
               </div>
             </div>
             <div className="lg:col-span-8 order-1 lg:order-2">
-              <div className="relative h-[500px] w-full bg-surface-container-low overflow-hidden rounded-lg">
+              <div className="relative w-full aspect-[16/9] md:h-[500px] bg-surface-container-low overflow-hidden rounded-lg">
                 <img className="w-full h-full object-cover" data-alt="exquisite carpaccio of scallops elegantly plated with edible flowers and citrus droplets on a dark slate plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbEhTiGKxzuwvoR-Pvm-H_ohxFPchr9NInJUESfHTqYsuKdoIS2vhzDo27CTJwTRDz_h3NIq_PG9NdcsEENmLqJuTLCl2-co_VzpibfVFgCInAdiNlkcsuD0lIpOYSOsAjPnOx-O_kbSa_34vzcI_Cp6wOOq-c0rMgbTHEL2dIXSagB5oHR03psUSugZQ2f-tZHcwRfrNNvJtT00DXSFggkXFzRHV18N3KCTNXJD9PWA4iajCC_tAl2fK5l-KVaM62-cdtp84vfLc" />
                 <div className="absolute bottom-8 -left-8 bg-surface-container-lowest p-8 shadow-sm max-w-sm hidden md:block">
                   <p className="font-label uppercase tracking-widest text-[10px] text-primary mb-2">Chef's Signature</p>
@@ -67,8 +63,8 @@ export default function Menu() {
           </div>
         </section>
         {/* Menu Section: Plats Principaux (Asymmetric Flip) */}
-        <section className="bg-surface-container-low py-32 mb-32" id="plats">
-          <div className="px-8">
+        <section className="bg-surface-container-low py-16 md:py-32 mb-16 md:mb-32" id="plats">
+          <div className="px-5 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
               <div className="lg:col-span-7">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
@@ -214,49 +210,7 @@ export default function Menu() {
           </div>
         </section>
       </main>
-      {/* Footer */}
-      <footer className="bg-zinc-100 w-full pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 mb-20">
-          <div className="space-y-6">
-            <h3 className="text-lg font-serif text-zinc-900">L'ÉCLAT</h3>
-            <p className="font-body text-sm text-zinc-500 leading-relaxed font-light">
-              Redefining gastronomy through the lens of modern luxury and classical French foundations.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-label uppercase tracking-widest text-[10px] mb-8 text-zinc-900">Experience</h4>
-            <ul className="space-y-4">
-              <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/menu">Menu</Link></li>
-              <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/gallery">Gallery</Link></li>
-              <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/philosophy">Philosophy</Link></li>
-              <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/location">Location</Link></li>
-              <li><Link className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="/reservations">Reservations</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-label uppercase tracking-widest text-[10px] mb-8 text-zinc-900">Company</h4>
-            <ul className="space-y-4">
-              <li><a className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="#">Privacy Policy</a></li>
-              <li><a className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="#">Terms of Service</a></li>
-              <li><a className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="#">Careers</a></li>
-              <li><a className="font-body text-sm text-zinc-500 hover:text-zinc-800 transition-colors" href="#">Press</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-label uppercase tracking-widest text-[10px] mb-8 text-zinc-900">Contact</h4>
-            <p className="font-body text-sm text-zinc-500 leading-relaxed font-light">
-              22 Place Vendôme, Paris, France<br />
-              +33 1 42 61 57 58<br />
-              contact@leclat.com
-            </p>
-          </div>
-        </div>
-        <div className="px-8 pt-8 border-t border-zinc-200">
-          <p className="font-label uppercase tracking-widest text-[9px] text-zinc-400 text-center">
-            © 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

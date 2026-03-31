@@ -1,50 +1,56 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import GalleryReveal from "./GalleryReveal";
 import HeaderNav from "../components/HeaderNav";
+import Footer from "../components/Footer";
 
 export default function Gallery() {
+  const [headerTransparent, setHeaderTransparent] = useState(false);
+
   return (
     <>
-      <HeaderNav activePage="gallery" />
+      <HeaderNav activePage="gallery" forceTransparent={headerTransparent} />
       
       <main className="pt-24 md:pt-28">
         {/* Hero Section */}
-        <section className="px-8 mb-20 md:mb-24">
-          <div className="flex flex-col items-start gap-4 mb-10 md:mb-12">
+        <section className="px-5 md:px-8 mb-12 md:mb-24">
+          <div className="flex flex-col items-start gap-3 mb-6 md:mb-12">
             <span className="font-label text-xs uppercase tracking-[0.4em] text-primary">A Visual Narrative</span>
-            <h1 className="font-serif text-6xl md:text-8xl leading-none tracking-tighter">Artistry <br /><span className="italic ml-12 md:ml-32">on a Plate</span></h1>
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl leading-none tracking-tighter">Artistry <br /><span className="italic ml-6 md:ml-32">on a Plate</span></h1>
           </div>
-          <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden rounded-sm group">
+          <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-sm group">
             <img alt="Gourmet dish" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOKLfKidMQ9r0XhbHuuRWGaXBSKxN4BK4c0i_q7LY4skshQpbYqU7_RTXFMMezQ2pNQYrqWO5B6lRkwS3ugWpZEeQC88rSBNapuTdvE-3Sl-_6J5wHjG6Lvuai17GKYli3VNPxVjk30vvgI2aIA5vIwmsYFejfy7-3In68TerO3VW_yfisLc4EMUw8en4t5YGHlR0ZUWGRmHFX8ZuvC9wNtUIND1P02-Ekv6xtFNur5VB86rE3nRyb4TlZE4Q8aiKUKCQzxmcBRnU" />
             <div className="absolute inset-0 bg-black/10"></div>
-            <div className="absolute bottom-8 right-8 bg-white p-6 md:p-10 max-w-sm shadow-2xl border-l-4 border-primary">
-              <p className="font-serif italic text-xl md:text-2xl leading-relaxed text-zinc-900">"Atmosphere is the secret ingredient that turns a meal into a lasting memory."</p>
-              <div className="mt-4 md:mt-6 flex items-center gap-4">
-                <span className="w-12 h-px bg-primary"></span>
+            <div className="absolute bottom-5 right-5 md:bottom-8 md:right-8 bg-white p-4 md:p-10 max-w-[200px] md:max-w-sm shadow-2xl border-l-4 border-primary hidden sm:block">
+              <p className="font-serif italic text-base md:text-2xl leading-relaxed text-zinc-900">&quot;Atmosphere is the secret ingredient that turns a meal into a lasting memory.&quot;</p>
+              <div className="mt-3 md:mt-6 flex items-center gap-4">
+                <span className="w-8 md:w-12 h-px bg-primary"></span>
                 <span className="font-label text-[10px] uppercase tracking-widest text-primary font-bold">The Vision</span>
               </div>
             </div>
           </div>
         </section>
 
-        <GalleryReveal />
+        <GalleryReveal onRevealActive={setHeaderTransparent} />
 
         {/* Experience Banner */}
-        <section className="bg-surface-container-highest py-24 md:py-32 overflow-hidden">
-          <div className="px-8 relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-              <div className="space-y-8 md:space-y-10">
+        <section className="bg-surface-container-highest py-16 md:py-32 overflow-hidden">
+          <div className="px-5 md:px-8 relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 items-center">
+              <div className="space-y-6 md:space-y-10">
                 <span className="font-label text-xs uppercase tracking-[0.3em] text-primary">Curated Atmosphere</span>
-                <h2 className="font-serif text-5xl md:text-6xl leading-tight">A Symphony <br />of Senses</h2>
-                <p className="font-body text-secondary text-lg md:text-xl leading-relaxed">From the tactile grain of our bespoke furniture to the acoustic resonance of our dining hall, we curate the "vibe" as carefully as we curate our rare vintages.</p>
-                <button className="px-10 py-4 border border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">
+                <h2 className="font-serif text-4xl md:text-6xl leading-tight">A Symphony <br />of Senses</h2>
+                <p className="font-body text-secondary text-base md:text-xl leading-relaxed">From the tactile grain of our bespoke furniture to the acoustic resonance of our dining hall, we curate the "vibe" as carefully as we curate our rare vintages.</p>
+                <button className="px-8 py-3 md:px-10 md:py-4 border border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 text-sm">
                   Our Philosophy
                 </button>
               </div>
               <div className="relative group">
-                <div className="absolute -top-16 -left-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                <div className="absolute -top-8 md:-top-16 -left-8 md:-left-16 w-40 md:w-64 h-40 md:h-64 bg-primary/10 rounded-full blur-3xl"></div>
                 <div className="gallery-item relative overflow-hidden rounded-sm shadow-2xl">
-                  <img alt="Expert cocktail service with aromatic garnishes" className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGh5UC4fqdf8LHVx65eznMhVAZ_VnZqpFbRMV6GENwUUNc08QSYZz8_wskJN5Vn5E_RI405JCwvXz5t82nnPUK1k-4fsPgA2TlNnL6oVwgp2YNY9X_PgBavXWKNavKVXApiWOGAvvMvwdIZKIMgtWcxnvRtJkP-J0buNVPuNHW_xD-WHPLp0EUhvcdlr4b38PRCCFLeX4z1Z6cyCiTo_PQG1meEkpYzAhQ0wDWzzG1ARwR2jC2-HcRU9fT_tzFyjUmjQ7v-xIQDdk" />
+                  <img alt="Expert cocktail service" className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGh5UC4fqdf8LHVx65eznMhVAZ_VnZqpFbRMV6GENwUUNc08QSYZz8_wskJN5Vn5E_RI405JCwvXz5t82nnPUK1k-4fsPgA2TlNnL6oVwgp2YNY9X_PgBavXWKNavKVXApiWOGAvvMvwdIZKIMgtWcxnvRtJkP-J0buNVPuNHW_xD-WHPLp0EUhvcdlr4b38PRCCFLeX4z1Z6cyCiTo_PQG1meEkpYzAhQ0wDWzzG1ARwR2jC2-HcRU9fT_tzFyjUmjQ7v-xIQDdk" />
                 </div>
               </div>
             </div>
@@ -69,45 +75,7 @@ export default function Gallery() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-zinc-100 dark:bg-zinc-950 w-full pt-16 md:pt-24 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 px-8">
-          <div className="space-y-8">
-            <div className="text-xl font-serif text-zinc-900 dark:text-zinc-100 uppercase tracking-tighter">L'ÉCLAT</div>
-            <p className="font-body text-sm text-zinc-500 leading-relaxed">An editorial journey through taste, light, and the art of fine dining. Paris • New York • Tokyo.</p>
-          </div>
-          <div className="space-y-6">
-            <span className="font-serif italic text-primary block text-lg">Navigation</span>
-            <ul className="space-y-3">
-              <li><Link className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="/">Home</Link></li>
-              <li><Link className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="/menu">Our Menu</Link></li>
-              <li><Link className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="/gallery">Gallery</Link></li>
-              <li><Link className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="/philosophy">Philosophy</Link></li>
-              <li><Link className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="/reservations">Reservations</Link></li>
-            </ul>
-          </div>
-          <div className="space-y-6">
-            <span className="font-serif italic text-primary block text-lg">Legal</span>
-            <ul className="space-y-3">
-              <li><a className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Privacy Policy</a></li>
-              <li><a className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Terms of Service</a></li>
-              <li><a className="text-zinc-500 hover:text-primary transition-colors font-body text-sm" href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div className="space-y-8">
-            <span className="font-serif italic text-primary block text-lg">Follow Us</span>
-            <div className="flex gap-6">
-              <span className="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary transition-colors" data-icon="camera">camera</span>
-              <span className="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary transition-colors" data-icon="share">share</span>
-              <span className="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary transition-colors" data-icon="mail">mail</span>
-            </div>
-            <p className="font-body text-xs text-zinc-400 uppercase tracking-widest mt-6">128 Avenue des Champs-Élysées, Paris</p>
-          </div>
-        </div>
-        <div className="px-8 mt-16 md:mt-24 pt-8 border-t border-zinc-200 dark:border-zinc-800 text-center">
-          <p className="font-body text-[10px] tracking-[0.4em] text-zinc-400 uppercase">© 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

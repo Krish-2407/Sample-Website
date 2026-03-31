@@ -79,4 +79,24 @@
   .letter-spacing-extra {
     letter-spacing: 0.35em;
   }
+  .luxury-gradient {
+    background: linear-gradient(135deg, #775a19 0%, #c5a059 50%, #d4ad65 100%);
+  }
+  .glass-nav {
+    background: rgba(250, 249, 246, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .font-manrope {
+    font-family: var(--font-manrope), sans-serif;
+  }
+  .font-noto-serif {
+    font-family: var(--font-noto-serif), serif;
+  }
+  .font-luxury {
+    font-family: var(--font-cormorant), serif;
+  }
+  .text-luxury-shadow {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
 }

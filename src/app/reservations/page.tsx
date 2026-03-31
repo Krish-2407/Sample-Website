@@ -1,23 +1,24 @@
 import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
+import Footer from "../components/Footer";
 
 export default function Reservations() {
   return (
     <>
-      <HeaderNav activePage="reservations" />
+      <HeaderNav activePage="reservations" theme="light" />
       
-      <main className="min-h-screen pt-32 pb-20 flex flex-col items-center">
+      <main className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-20 flex flex-col items-center">
         {/* Editorial Header Section */}
-        <header className="text-center max-w-3xl px-8 mb-16">
-          <span className="font-label uppercase tracking-[0.3em] text-[10px] text-primary mb-4 block">Reservations</span>
-          <h1 className="font-headline text-5xl md:text-6xl text-on-surface mb-6 tracking-tight leading-tight">Secure Your Table at L'ÉCLAT</h1>
-          <p className="font-body text-secondary text-lg font-light leading-relaxed">
-            Join us for an unforgettable gastronomic journey where every detail is curated to perfection. Please note that cancellations must be made at least 24 hours in advance to avoid a service fee.
+        <header className="text-center max-w-3xl px-5 md:px-8 mb-10 md:mb-16">
+          <span className="font-label uppercase tracking-[0.18em] text-[10px] text-primary mb-4 block">Reservations</span>
+          <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl text-on-surface mb-4 md:mb-6 tracking-[-0.02em] leading-[1.05]">Secure Your Table at L&apos;ÉCLAT</h1>
+          <p className="font-body text-secondary text-sm md:text-base font-light leading-[1.75] max-w-xl mx-auto">
+            Join us for an unforgettable gastronomic journey where every detail is curated to perfection.
           </p>
         </header>
 
         {/* Reservation Canvas */}
-        <div className="w-full max-w-5xl px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="w-full max-w-5xl px-5 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
           {/* Left Side: Visual/Context (Chef's Highlight Style) */}
           <div className="lg:col-span-5 relative hidden lg:block h-[600px]">
             <div className="absolute inset-0 bg-surface-container-low rounded-xl overflow-hidden">
@@ -25,13 +26,13 @@ export default function Reservations() {
             </div>
             <div className="absolute -bottom-8 -right-8 bg-surface-container-lowest p-10 shadow-sm max-w-[280px]">
               <span className="material-symbols-outlined text-primary text-4xl mb-4" data-icon="restaurant_menu">restaurant_menu</span>
-              <h3 className="font-headline text-xl mb-2 italic">The Tasting Room</h3>
+              <h3 className="font-headline text-xl mb-2 italic tracking-[-0.01em]">The Tasting Room</h3>
               <p className="font-body text-sm text-secondary font-light">Experience our chef's signature 9-course seasonal selection in an intimate setting.</p>
             </div>
           </div>
 
           {/* Right Side: Reservation Form */}
-          <div className="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl">
+          <div className="lg:col-span-7 bg-surface-container-lowest p-6 md:p-12 rounded-xl">
             <form className="space-y-10">
               {/* Row 1: Date & Time */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -99,44 +100,7 @@ export default function Reservations() {
         </div>
       </main>
 
-      {/* Footer (Shared Component) */}
-      <footer className="bg-zinc-100 dark:bg-zinc-950 w-full pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8">
-          <div className="space-y-6">
-            <span className="text-lg font-serif text-zinc-900 dark:text-zinc-100">L'ÉCLAT</span>
-            <p className="font-body font-light text-zinc-500 text-sm leading-relaxed">
-              Elevating gastronomy to an art form. Join us for a symphony of flavors in the heart of the culinary district.
-            </p>
-          </div>
-          <div>
-            <span className="font-headline italic text-amber-700 dark:text-amber-500 block mb-6">Explore</span>
-            <ul className="space-y-4">
-              <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/">Home</Link></li>
-              <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/menu">Menu</Link></li>
-              <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/gallery">Gallery</Link></li>
-              <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/philosophy">Philosophy</Link></li>
-              <li><Link className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="/location">Location</Link></li>
-            </ul>
-          </div>
-          <div>
-            <span className="font-headline italic text-amber-700 dark:text-amber-500 block mb-6">Company</span>
-            <ul className="space-y-4">
-              <li><a className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="#">Careers</a></li>
-              <li><a className="text-zinc-500 hover:text-zinc-800 font-body font-light text-sm" href="#">Press</a></li>
-            </ul>
-          </div>
-          <div className="flex flex-col items-start md:items-end">
-            <span className="font-headline italic text-amber-700 dark:text-amber-500 block mb-6">Follow Us</span>
-            <div className="flex gap-6">
-              <span className="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
-              <span className="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-colors" data-icon="camera_alt">camera_alt</span>
-            </div>
-          </div>
-        </div>
-        <div className="px-8 pt-20">
-          <p className="font-body font-light text-[10px] tracking-widest text-zinc-400 uppercase">© 2024 L'ÉCLAT GASTRONOMY. ALL RIGHTS RESERVED.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Manrope } from "next/font/google";
+import { Noto_Serif, Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const notoSerif = Noto_Serif({
@@ -13,6 +13,13 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${notoSerif.variable} ${manrope.variable} bg-background text-on-surface font-body selection:bg-primary-fixed-dim antialiased min-h-full flex flex-col`}
+        className={`${notoSerif.variable} ${manrope.variable} ${cormorant.variable} bg-background text-on-surface font-body selection:bg-primary-fixed-dim antialiased min-h-full flex flex-col`}
       >
         {children}
       </body>
