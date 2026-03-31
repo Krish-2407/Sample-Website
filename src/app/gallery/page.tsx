@@ -20,8 +20,8 @@ export default function Gallery() {
             <span className="font-label text-xs uppercase tracking-[0.4em] text-primary">A Visual Narrative</span>
             <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl leading-none tracking-tighter">Artistry <br /><span className="italic ml-6 md:ml-32">on a Plate</span></h1>
           </div>
-          <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-sm group">
-            <img alt="Gourmet dish" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOKLfKidMQ9r0XhbHuuRWGaXBSKxN4BK4c0i_q7LY4skshQpbYqU7_RTXFMMezQ2pNQYrqWO5B6lRkwS3ugWpZEeQC88rSBNapuTdvE-3Sl-_6J5wHjG6Lvuai17GKYli3VNPxVjk30vvgI2aIA5vIwmsYFejfy7-3In68TerO3VW_yfisLc4EMUw8en4t5YGHlR0ZUWGRmHFX8ZuvC9wNtUIND1P02-Ekv6xtFNur5VB86rE3nRyb4TlZE4Q8aiKUKCQzxmcBRnU" />
+          <div className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden rounded-sm group mb-8 md:mb-12">
+            <img alt="Artistry on a Plate - Premium Indian Plating" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="/images/gallery/hero_artistry.png" />
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="absolute bottom-5 right-5 md:bottom-8 md:right-8 bg-white p-4 md:p-10 max-w-[200px] md:max-w-sm shadow-2xl border-l-4 border-primary hidden sm:block">
               <p className="font-serif italic text-base md:text-2xl leading-relaxed text-zinc-900">&quot;Atmosphere is the secret ingredient that turns a meal into a lasting memory.&quot;</p>

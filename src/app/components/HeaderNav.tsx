@@ -46,11 +46,11 @@ export default function HeaderNav({
     if (forceTransparent) return "bg-transparent border-transparent";
     if (menuOpen) return "bg-[#1a1c1a]/98 border-b border-white/10";
     if (scrolled) {
-      // Scrolled state: Solid glass blur (dark theme for consistent premium feel)
-      return "bg-[#1a1c1a]/85 backdrop-blur-xl border-b border-white/10 shadow-2xl";
+      // Scrolled state: Reduced glass blur
+      return "bg-[#1a1c1a]/85 backdrop-blur-[10px] border-b border-white/10 shadow-2xl";
     }
     // Top state: Solid glass blur effect as requested
-    return "bg-[#1a1c1a]/90 backdrop-blur-[14px] border-b border-white/5";
+    return "bg-[#1a1c1a]/90 backdrop-blur-[7px] border-b border-white/5";
   };
 
   const getLinkColor = (page: Page) => {
@@ -139,7 +139,7 @@ export default function HeaderNav({
 
       {/* Mobile slide-down menu */}
       <div
-        className={`fixed top-0 left-0 w-full z-40 bg-[#1a1c1a]/98 backdrop-blur-xl transition-all duration-500 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 w-full z-40 bg-[#1a1c1a]/98 backdrop-blur-lg transition-all duration-500 ease-in-out md:hidden ${
           menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >

@@ -82,7 +82,7 @@ export default function Philosophy() {
         </section>
 
         {/* The Chef: Immersive Vision */}
-        <section className="py-0 px-5 md:px-0 bg-on-background text-surface relative overflow-hidden">
+        <section id="the-visionary" className="py-0 px-5 md:px-0 bg-on-background text-surface relative overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Large Scale Portrait */}
             <div className="w-full lg:w-1/2 h-[400px] lg:h-screen lg:sticky lg:top-0">
