@@ -1,106 +1,151 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
 
 export default function Reservations() {
   return (
-    <>
-      <HeaderNav activePage="reservations" theme="light" />
+    <div className="bg-surface overflow-x-hidden">
+      <HeaderNav activePage="reservations" theme="dark" />
       
-      <main className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-20 flex flex-col items-center">
-        {/* Editorial Header Section */}
-        <header className="text-center max-w-3xl px-5 md:px-8 mb-10 md:mb-16">
-          <span className="font-label uppercase tracking-[0.18em] text-[10px] text-primary mb-4 block">Reservations</span>
-          <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl text-on-surface mb-4 md:mb-6 tracking-[-0.02em] leading-[1.05]">Secure Your Table at L&apos;ÉCLAT</h1>
-          <p className="font-body text-secondary text-sm md:text-base font-light leading-[1.75] max-w-xl mx-auto">
-            Join us for an unforgettable gastronomic journey where every detail is curated to perfection.
-          </p>
-        </header>
-
-        {/* Reservation Canvas */}
-        <div className="w-full max-w-5xl px-5 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
-          {/* Left Side: Visual/Context (Chef's Highlight Style) */}
-          <div className="lg:col-span-5 relative hidden lg:block h-[600px]">
-            <div className="absolute inset-0 bg-surface-container-low rounded-xl overflow-hidden">
-              <img className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Intimate view of a high-end restaurant table set with white linen, gold cutlery, and crystal glassware under soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYzU5l9PThKz7mkabipLJ-LAjXaNhRHJeFgfTbwa3p6s4d7zeXiaYf4TCdONyZcwv3FpKzTXiJpFkXhcyBZFzRvG1RyPGTxPGvK1PU5v8m9slDZ6xphKz93byKyATanxkWuEWcmCFs3kjYbx9vV5_ep3bFX7gQIafdqrhgx-yQ34qm54ijyegsJDUPhi3uPSKVSJolEtBxw0BRu3HB-5RprfWP_z7B_ArQTdxSwFrQlkqSyWi5TF51yKDPW1TZS3E3lVHjkNuRKic" />
-            </div>
-            <div className="absolute -bottom-8 -right-8 bg-surface-container-lowest p-10 shadow-sm max-w-[280px]">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4" data-icon="restaurant_menu">restaurant_menu</span>
-              <h3 className="font-headline text-xl mb-2 italic tracking-[-0.01em]">The Tasting Room</h3>
-              <p className="font-body text-sm text-secondary font-light">Experience our chef's signature 9-course seasonal selection in an intimate setting.</p>
-            </div>
-          </div>
-
-          {/* Right Side: Reservation Form */}
-          <div className="lg:col-span-7 bg-surface-container-lowest p-6 md:p-12 rounded-xl">
-            <form className="space-y-10">
-              {/* Row 1: Date & Time */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="relative">
-                  <label className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Date</label>
-                  <input className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface placeholder-secondary/50" type="date" />
-                </div>
-                <div className="relative">
-                  <label className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Time</label>
-                  <select className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface appearance-none">
-                    <option>18:00</option>
-                    <option>19:30</option>
-                    <option>20:45</option>
-                    <option>22:00</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Row 2: Guests & Occasion */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="relative">
-                  <label className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Number of Guests</label>
-                  <select className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface appearance-none" defaultValue="2 Guests">
-                    <option>1 Guest</option>
-                    <option value="2 Guests">2 Guests</option>
-                    <option>3 Guests</option>
-                    <option>4 Guests</option>
-                    <option>5+ (Contact us)</option>
-                  </select>
-                </div>
-                <div className="relative">
-                  <label className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Occasion</label>
-                  <select className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface appearance-none">
-                    <option>Select Occasion</option>
-                    <option>Anniversary</option>
-                    <option>Birthday</option>
-                    <option>Business Dinner</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Row 3: Special Requests */}
-              <div className="relative">
-                <label className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Special Requests</label>
-                <textarea className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-2 font-body text-on-surface placeholder-zinc-400" placeholder="Dietary requirements, seating preference..." rows={2}></textarea>
-              </div>
-
-              {/* Policy Check */}
-              <div className="flex items-start gap-3 pt-4">
-                <input className="mt-1 rounded border-outline-variant text-primary focus:ring-primary-container h-4 w-4" id="policy" type="checkbox" />
-                <label className="font-body text-xs text-secondary font-light leading-relaxed" htmlFor="policy">
-                  I understand and agree to the <a className="text-primary underline underline-offset-4" href="#">Cancellation Policy</a> and terms of service.
-                </label>
-              </div>
-
-              {/* Submit Action */}
-              <div className="pt-8">
-                <button className="w-full luxury-gradient text-on-primary font-label uppercase tracking-[0.2em] text-xs font-bold py-6 rounded-lg shadow-lg hover:brightness-105 transition-all active:scale-[0.98]" type="submit">
-                  Confirm Reservation
-                </button>
-              </div>
-            </form>
-          </div>
+      <main className="relative min-h-screen">
+        {/* Full-Bleed Arrival Hero Background (Fixed) */}
+        <div className="fixed inset-0 z-0">
+          <img 
+            src="/images/reservations/reservation_hero.png" 
+            alt="L'ÉCLAT Sanctuary" 
+            className="w-full h-full object-cover brightness-[0.55] contrast-[1.1] scale-105" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40"></div>
         </div>
+
+        {/* Dynamic Content Overlay */}
+        <section className="relative z-10 pt-32 md:pt-44 pb-20 px-6 md:px-12 lg:px-20 max-w-[1750px] mx-auto min-h-screen flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+          
+          {/* Left: Editorial Narrative */}
+          <motion.div 
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-5/12 space-y-12"
+          >
+            <div className="space-y-10">
+              <span className="font-label uppercase tracking-[0.7em] text-[#EAD8B1] text-lg font-bold block mb-4">The Sanctum</span>
+              <h1 className="font-luxury text-7xl md:text-8xl lg:text-[10rem] leading-[0.82] tracking-tighter mb-10 bg-gradient-to-r from-white via-[#F5E6CA] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-2xl">
+                A Table <br />Awaits.
+              </h1>
+              <p className="font-headline text-2xl md:text-3xl text-white max-w-lg leading-relaxed font-light opacity-100">
+                Step into a sanctuary where every flavor is a revelation and time slows to the art of the craft.
+              </p>
+            </div>
+
+            {/* Atelier Selection Insight - Luxury Content Block (Whiter Glass) */}
+            <div className="bg-white/15 backdrop-blur-[40px] border border-white/20 p-10 md:p-14 rounded-sm max-w-md shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)]">
+              <div className="flex items-center gap-8 mb-10">
+                <span className="w-20 h-px bg-primary/80"></span>
+                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-extrabold">The Seasonal Odyssée</span>
+              </div>
+              <h3 className="font-luxury text-4xl text-white mb-6">Signature 12-Course</h3>
+              <p className="font-body text-sm text-white/85 leading-[2] font-light">
+                An immersive exploration of forgotten roots and avant-garde technique, curated for the true enthusiast.
+              </p>
+              <div className="mt-12 flex justify-between items-center text-[9px] font-label uppercase tracking-[0.4em] text-primary/75 border-t border-white/10 pt-10">
+                <span>2.5 Hours Experience</span>
+                <span>Bespoke Pairings</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Floating Luxury Glass Form */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-7/12"
+          >
+            <div className="bg-surface/90 backdrop-blur-[50px] p-8 md:p-16 lg:p-24 shadow-[0_60px_120px_-30px_rgba(0,0,0,0.9)] rounded-none border border-white/5 relative overflow-hidden group">
+              {/* Luxury Accent Glow */}
+              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full -mr-[300px] -mt-[300px] blur-[150px] pointer-events-none group-hover:bg-primary/20 transition-all duration-[2s]"></div>
+              
+              <div className="relative z-10">
+                <h2 className="font-luxury text-5xl md:text-7xl text-on-surface mb-20 border-b border-outline-variant/10 pb-12 tracking-tight">Curate Your Experience</h2>
+                
+                <form className="space-y-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <div className="relative group">
+                      <label className="font-label text-sm uppercase tracking-[0.5em] text-primary mb-5 block font-bold">Preferred Date</label>
+                      <input 
+                        type="date" 
+                        defaultValue="2026-04-20"
+                        className="w-full bg-transparent border-0 border-b border-outline-variant/80 focus:border-primary focus:ring-0 px-0 py-5 font-body text-on-surface text-xl transition-all"
+                      />
+                    </div>
+                    <div className="relative group">
+                      <label className="font-label text-sm uppercase tracking-[0.5em] text-primary mb-5 block font-bold">Planned Séance</label>
+                      <select className="w-full bg-transparent border-0 border-b border-outline-variant/80 focus:border-primary focus:ring-0 px-0 py-5 font-body text-on-surface text-xl appearance-none cursor-pointer">
+                        <option className="bg-on-background text-white">19:30 — Sunset Seating</option>
+                        <option className="bg-on-background text-white">20:45 — Candlelight Selection</option>
+                        <option className="bg-on-background text-white">22:00 — Night Nocturne</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <div className="relative">
+                      <label className="font-label text-sm uppercase tracking-[0.5em] text-primary mb-5 block font-bold">The Party Size</label>
+                      <select className="w-full bg-transparent border-0 border-b border-outline-variant/80 focus:border-primary focus:ring-0 px-0 py-5 font-body text-on-surface text-xl appearance-none cursor-pointer">
+                        <option className="bg-on-background text-white">2 Guests — Intimate Sanctum</option>
+                        <option className="bg-on-background text-white">4 Guests — Shared Discovery</option>
+                        <option className="bg-on-background text-white">6+ — Private Enclave (Consult)</option>
+                      </select>
+                    </div>
+                    <div className="relative">
+                      <label className="font-label text-sm uppercase tracking-[0.5em] text-primary mb-5 block font-bold">The Sentiment</label>
+                      <select className="w-full bg-transparent border-0 border-b border-outline-variant/80 focus:border-primary focus:ring-0 px-0 py-5 font-body text-on-surface text-xl appearance-none cursor-pointer">
+                        <option className="bg-on-background text-white">Culinary Exploration</option>
+                        <option className="bg-on-background text-white">Anniversary Celebration</option>
+                        <option className="bg-on-background text-white">Elegant Business Dinner</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <label className="font-label text-sm uppercase tracking-[0.5em] text-primary mb-5 block font-bold">Special Requests & Nuances</label>
+                    <textarea 
+                      rows={2}
+                      placeholder="Share any specific dietary paths or preferences..."
+                      className="w-full bg-transparent border-0 border-b border-outline-variant/80 focus:border-primary focus:ring-0 px-0 py-5 font-body text-on-surface text-xl placeholder:text-on-surface/40 transition-all resize-none"
+                    ></textarea>
+                  </div>
+
+                  <div className="pt-16">
+                    <button className="w-full bg-primary text-on-primary py-9 md:py-12 font-label uppercase tracking-[0.6em] text-xs font-bold hover:bg-primary-container hover:text-on-primary-container transition-all duration-1000 shadow-2xl relative overflow-hidden group">
+                      <span className="relative z-10">Confirm Safe Passage</span>
+                      <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16, 1, 0.3, 1]"></div>
+                    </button>
+                    <div className="flex flex-col md:flex-row justify-between items-center mt-12 gap-6 opacity-80">
+                      <p className="text-xs font-body uppercase tracking-[0.3em] text-on-surface/80">Dress Code: Smart Casual</p>
+                      <p className="text-xs font-body uppercase tracking-[0.3em] text-on-surface/80">Convenient Parking Available</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Visual grounding spacer */}
+        <div className="h-20 bg-transparent relative z-10"></div>
       </main>
 
-      <Footer />
-    </>
+      {/* Footer with fixed background fix */}
+      <div className="relative z-[20] bg-[#0a0a0a] border-t border-white/5">
+        <Footer />
+      </div>
+    </div>
   );
 }
