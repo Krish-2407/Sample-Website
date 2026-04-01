@@ -40,12 +40,14 @@ export default function Gallery() {
           <div className="px-5 md:px-8 relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 items-center">
               <div className="space-y-6 md:space-y-10">
-                <span className="font-label text-xs uppercase tracking-[0.3em] text-primary">Curated Atmosphere</span>
+                <span className="font-label text-lg uppercase tracking-[0.3em] text-primary">Curated Atmosphere</span>
                 <h2 className="font-serif text-4xl md:text-6xl leading-tight">A Symphony <br />of Senses</h2>
                 <p className="font-body text-secondary text-base md:text-xl leading-relaxed">From the tactile grain of our bespoke furniture to the acoustic resonance of our dining hall, we curate the "vibe" as carefully as we curate our rare vintages.</p>
-                <button className="px-8 py-3 md:px-10 md:py-4 border border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 text-sm">
-                  Our Philosophy
-                </button>
+                <Link href="/philosophy">
+                  <button className="px-8 py-4 md:px-10 md:py-5 border border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 text-sm shadow-lg">
+                    Our Philosophy
+                  </button>
+                </Link>
               </div>
               <div className="relative group">
                 <div className="absolute -top-8 md:-top-16 -left-8 md:-left-16 w-40 md:w-64 h-40 md:h-64 bg-primary/10 rounded-full blur-3xl"></div>

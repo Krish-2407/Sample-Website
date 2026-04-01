@@ -15,7 +15,7 @@ const navLinks: { href: string; page: Page; label: string }[] = [
   { href: "/", page: "home", label: "Home" },
   { href: "/menu", page: "menu", label: "Menu" },
   { href: "/gallery", page: "gallery", label: "Gallery" },
-  { href: "/philosophy", page: "philosophy", label: "Philosophy" },
+  { href: "/philosophy", page: "philosophy", label: "Our Philosophy" },
   { href: "/location", page: "location", label: "Location" },
 ];
 
