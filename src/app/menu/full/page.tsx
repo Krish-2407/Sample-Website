@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
-import FlipbookMenu from "@/app/components/FlipbookMenu";
+import dynamic from "next/dynamic";
+
+const FlipbookMenu = dynamic(() => import("@/app/components/FlipbookMenu"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex flex-col items-center justify-center h-[60vh] text-primary">
+      <span className="material-symbols-outlined animate-spin text-4xl mb-4">settings</span>
+      <p className="font-label text-xs tracking-widest uppercase text-zinc-500">Preparing the full collection...</p>
+    </div>
+  )
+});
 import HeaderNav from "@/app/components/HeaderNav";
 import Footer from "@/app/components/Footer";
 import { motion } from "framer-motion";
