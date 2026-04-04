@@ -13,20 +13,20 @@ export default function Home() {
             <img alt="Signature Dish" className="w-full h-full object-cover grayscale-[5%]" src="/images/hero_luxury.png" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
           </div>
-          <div className="relative z-10 px-5 md:px-8 w-full pt-24 md:pt-0">
-            <div className="max-w-2xl">
-              <span className="block font-label uppercase tracking-[0.18em] text-primary-fixed mb-5 md:mb-7 text-[10px] md:text-xs font-bold">Fine Dining Reimagined</span>
-              <h1 className="font-luxury text-[3rem] sm:text-6xl md:text-8xl lg:text-[7rem] text-white leading-[0.9] mb-7 md:mb-10 tracking-[-0.03em] text-luxury-shadow">
-                The Art of <br /> <span className="font-normal text-primary-fixed">Refined</span> Dining
+          <div className="relative z-10 px-5 md:px-8 w-full pt-28 md:pt-0">
+            <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
+              <span className="block font-label uppercase tracking-[0.18em] text-primary-fixed mb-5 md:mb-7 text-xs md:text-[10px] lg:text-xs font-bold">Fine Dining Reimagined</span>
+              <h1 className="font-luxury text-[4.2rem] sm:text-7xl md:text-8xl lg:text-[7rem] text-white leading-none mb-10 md:mb-12 tracking-tight">
+                The Art of <br /><span className="italic font-normal">Refined</span> Dining
               </h1>
-              <p className="text-white/90 mb-8 md:mb-10 max-w-md font-manrope font-light leading-[1.75] text-sm md:text-base text-luxury-shadow">
-                An immersive gastronomic journey where classical techniques meet contemporary vision. Each plate is a curated masterpiece.
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
-                <Link href="/reservations" className="bg-gold-gradient text-on-primary px-8 py-4 md:px-10 md:py-5 rounded-md font-label uppercase tracking-widest text-xs font-bold transition-transform hover:scale-[1.02] inline-block text-center w-full sm:w-auto">
-                  Book Your Experience
+              
+              <div className="flex flex-col items-center gap-10 w-full pt-10">
+                <Link href="/reservations">
+                  <button className="bg-gold-gradient text-white px-14 py-5 text-[10px] md:text-sm uppercase tracking-[0.4em] font-bold editorial-shadow hover:scale-105 transition-all duration-500 rounded-sm">
+                    Book Your Experience
+                  </button>
                 </Link>
-                <Link className="font-label uppercase tracking-widest text-xs font-bold text-primary-fixed border-b border-primary-fixed/30 pb-1 hover:border-primary-fixed transition-all" href="/menu">
+                <Link href="/menu" className="font-label uppercase tracking-[0.3em] text-[10px] md:text-xs text-white/80 border-b border-white/20 pb-1 hover:border-white transition-all">
                   View Menu
                 </Link>
               </div>
@@ -60,7 +60,7 @@ export default function Home() {
               <span className="font-label uppercase tracking-[0.18em] text-primary mb-4 block text-[10px] md:text-xs">The Curated Selection</span>
               <h2 className="font-headline text-3xl md:text-5xl text-on-background tracking-[-0.02em]">A Taste of <span className="italic font-normal">Perfection</span></h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-10 md:gap-y-16">
               {/* Dish 1 */}
               <div className="group cursor-pointer">
                 <div className="aspect-[1/1.3] overflow-hidden rounded-md mb-4 md:mb-6">
@@ -110,9 +110,11 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-12 md:mt-16 text-center">
-              <button className="font-label uppercase tracking-widest text-[10px] font-bold text-primary border-b-2 border-primary/20 pb-1.5 hover:border-primary transition-all">
-                Explore Full Menu
-              </button>
+              <Link href="/menu">
+                <button className="font-label uppercase tracking-widest text-[10px] font-bold text-primary border-b-2 border-primary/20 pb-1.5 hover:border-primary transition-all cursor-pointer">
+                  Explore Full Menu
+                </button>
+              </Link>
             </div>
           </div>
         </section>

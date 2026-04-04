@@ -76,7 +76,7 @@ const ViewMore = () => (
     className="mt-12 flex justify-start"
   >
     <Link href="/menu/full" className="group flex items-center space-x-4">
-      <span className="font-label text-[10px] uppercase tracking-[0.4em] text-zinc-400 group-hover:text-primary transition-colors">
+      <span className="font-label text-[10px] uppercase tracking-[0.4em] text-zinc-600 group-hover:text-primary transition-colors">
         [ View Full Category ]
       </span>
       <div className="w-8 h-px bg-zinc-200 group-hover:w-12 group-hover:bg-primary transition-all duration-300"></div>
@@ -170,6 +170,24 @@ export default function Menu() {
                     <h2 className="font-luxury text-6xl md:text-8xl text-zinc-950 mb-6">{menuData.appetizers.title}</h2>
                     <p className="font-body text-zinc-500 text-sm tracking-[0.4em] uppercase">{menuData.appetizers.subtitle}</p>
                  </div>
+                 
+                 {/* Mobile Image: Below Heading */}
+                 <div className="block lg:hidden mb-12">
+                   <motion.div 
+                     initial={{ scale: 0.95, opacity: 0 }}
+                     whileInView={{ scale: 1, opacity: 1 }}
+                     viewport={{ once: true }}
+                     className="relative aspect-[4/5] bg-zinc-100 editorial-shadow overflow-hidden group"
+                   >
+                      <Image src={menuData.appetizers.image} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" alt="Exquisite Indian Appetizers" />
+                      <div className="absolute inset-0 bg-zinc-950/10 mix-blend-overlay"></div>
+                      <div className="absolute bottom-6 left-6 right-6 text-white max-w-md">
+                        <p className="font-label text-[10px] uppercase tracking-[0.4em] mb-2 text-primary">The Signature</p>
+                        <h3 className="font-luxury text-3xl italic">Punjabi Samosa</h3>
+                      </div>
+                   </motion.div>
+                 </div>
+
                  <div className="space-y-4">
                     {menuData.appetizers.items.map((item, i) => (
                       <MenuItem key={i} {...item} />
@@ -177,7 +195,7 @@ export default function Menu() {
                     <ViewMore />
                  </div>
                </div>
-               <div className="order-1 lg:order-2">
+               <div className="hidden lg:block order-1 lg:order-2">
                  <motion.div 
                    initial={{ scale: 0.95, opacity: 0 }}
                    whileInView={{ scale: 1, opacity: 1 }}
@@ -201,7 +219,7 @@ export default function Menu() {
         <section id="starters" className="relative py-24 md:py-40 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-5 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-               <div>
+               <div className="hidden lg:block">
                   <motion.div 
                    initial={{ scale: 0.95, opacity: 0 }}
                    whileInView={{ scale: 1, opacity: 1 }}
@@ -223,6 +241,24 @@ export default function Menu() {
                     <h2 className="font-luxury text-6xl md:text-8xl text-zinc-950 mb-6">{menuData.starters.title}</h2>
                     <p className="font-body text-zinc-500 text-sm tracking-[0.4em] uppercase">{menuData.starters.subtitle}</p>
                  </div>
+
+                 {/* Mobile Image: Below Heading */}
+                 <div className="block lg:hidden mb-12">
+                   <motion.div 
+                     initial={{ scale: 0.95, opacity: 0 }}
+                     whileInView={{ scale: 1, opacity: 1 }}
+                     viewport={{ once: true }}
+                     className="relative aspect-[4/5] bg-zinc-100 editorial-shadow overflow-hidden group"
+                   >
+                      <Image src={menuData.starters.image} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" alt="Artisanal Paneer Tikka" />
+                      <div className="absolute inset-0 bg-zinc-950/10 mix-blend-overlay"></div>
+                      <div className="absolute bottom-6 left-6 right-6 text-white max-w-md">
+                        <p className="font-label text-[10px] uppercase tracking-[0.4em] mb-2 text-primary">The Signature</p>
+                        <h3 className="font-luxury text-3xl italic">Paneer Tikka</h3>
+                      </div>
+                   </motion.div>
+                 </div>
+
                  <div className="space-y-4">
                     {menuData.starters.items.map((item, i) => (
                       <MenuItem key={i} {...item} />
@@ -237,30 +273,72 @@ export default function Menu() {
         {/* Chapter 3: Main Courses */}
         <section id="mains" className="relative py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-5 md:px-10">
-            <div className="text-center mb-20">
-               <span className="font-label text-[13px] uppercase tracking-[0.6em] text-primary mb-4 block">03 / Chapter</span>
-               <h2 className="font-luxury text-6xl md:text-9xl text-zinc-950 mb-6 leading-none">{menuData.mains.title}</h2>
-               <p className="font-body text-zinc-500 text-base tracking-[0.4em] uppercase max-w-lg mx-auto leading-relaxed">{menuData.mains.subtitle}</p>
+            
+            {/* Desktop Layout (Original) */}
+            <div className="hidden lg:block">
+              <div className="text-center mb-20">
+                <span className="font-label text-[13px] uppercase tracking-[0.6em] text-primary mb-4 block">03 / Chapter</span>
+                <h2 className="font-luxury text-6xl md:text-9xl text-zinc-950 mb-6 leading-none">{menuData.mains.title}</h2>
+                <p className="font-body text-zinc-500 text-base tracking-[0.4em] uppercase max-w-lg mx-auto leading-relaxed">{menuData.mains.subtitle}</p>
+              </div>
+
+              <div className="relative w-full aspect-video md:h-[600px] mb-24 editorial-shadow overflow-hidden group">
+                <Image src={menuData.mains.image} fill className="object-cover brightness-90 transition-transform duration-1000 group-hover:scale-110" alt="Signature Dal Makhani" />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
+                <div className="absolute bottom-10 left-10 text-white max-w-md">
+                  <p className="font-label text-[10px] uppercase tracking-[0.4em] mb-3 text-primary">The Signature</p>
+                  <h3 className="font-luxury text-4xl italic">Dal Makhani</h3>
+                  <p className="font-body text-sm mt-4 text-zinc-300 leading-relaxed tracking-wider">Our house special whole black lentils, simmered overnight on a slow fire and finished with fresh cream and butter. Served with fresh garlic naan.</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
+                  {menuData.mains.items.map((item, i) => (
+                    <MenuItem key={i} {...item} />
+                  ))}
+              </div>
+              <div className="mt-16 flex justify-center">
+                <ViewMore />
+              </div>
             </div>
 
-            <div className="relative w-full aspect-video md:h-[600px] mb-24 editorial-shadow overflow-hidden group">
-               <Image src={menuData.mains.image} fill className="object-cover brightness-90 transition-transform duration-1000 group-hover:scale-110" alt="Signature Dal Makhani" />
-               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
-               <div className="absolute bottom-10 left-10 text-white max-w-md">
-                 <p className="font-label text-[10px] uppercase tracking-[0.4em] mb-3 text-primary">The Signature</p>
-                 <h3 className="font-luxury text-4xl italic">Dal Makhani</h3>
-                 <p className="font-body text-sm mt-4 text-zinc-300 leading-relaxed tracking-wider">Our house special whole black lentils, simmered overnight on a slow fire and finished with fresh cream and butter. Served with fresh garlic naan.</p>
-               </div>
+            {/* Mobile Layout (Optimized) */}
+            <div className="lg:hidden">
+              <div className="grid grid-cols-1 gap-20 items-center">
+                <div>
+                  <div className="mb-16">
+                      <span className="font-label text-[13px] uppercase tracking-[0.6em] text-primary mb-4 block">03 / Chapter</span>
+                      <h2 className="font-luxury text-6xl md:text-8xl text-zinc-950 mb-6">{menuData.mains.title}</h2>
+                      <p className="font-body text-zinc-500 text-sm tracking-[0.4em] uppercase">{menuData.mains.subtitle}</p>
+                  </div>
+                  
+                  {/* Mobile Image: Below Heading */}
+                  <div className="mb-12">
+                    <motion.div 
+                      initial={{ scale: 0.95, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      className="relative aspect-[4/5] bg-zinc-100 editorial-shadow overflow-hidden group"
+                    >
+                        <Image src={menuData.mains.image} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" alt="Signature Dal Makhani" />
+                        <div className="absolute inset-0 bg-zinc-950/10 mix-blend-overlay"></div>
+                        <div className="absolute bottom-6 left-6 right-6 text-white max-w-md">
+                          <p className="font-label text-[10px] uppercase tracking-[0.4em] mb-2 text-primary">The Signature</p>
+                          <h3 className="font-luxury text-3xl italic">Dal Makhani</h3>
+                        </div>
+                    </motion.div>
+                  </div>
+
+                  <div className="space-y-4">
+                      {menuData.mains.items.map((item, i) => (
+                        <MenuItem key={i} {...item} />
+                      ))}
+                      <ViewMore />
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
-                {menuData.mains.items.map((item, i) => (
-                  <MenuItem key={i} {...item} />
-                ))}
-            </div>
-            <div className="mt-16 flex justify-center">
-              <ViewMore />
-            </div>
           </div>
         </section>
 
@@ -268,12 +346,31 @@ export default function Menu() {
         <section id="desserts" className="relative py-24 md:py-40 bg-zinc-50 text-zinc-950 overflow-hidden">
           <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-               <div>
+               
+               <div className="order-2 lg:order-1">
                  <div className="mb-16">
                     <span className="font-label text-[13px] uppercase tracking-[0.6em] text-primary mb-4 block">04 / Chapter</span>
                     <h2 className="font-luxury text-6xl md:text-8xl text-zinc-950 mb-6">{menuData.desserts.title}</h2>
                     <p className="font-body text-zinc-500 text-sm tracking-[0.4em] uppercase">{menuData.desserts.subtitle}</p>
                  </div>
+
+                 {/* Mobile Image: Below Heading */}
+                 <div className="block lg:hidden mb-12">
+                   <motion.div 
+                     initial={{ y: 50, opacity: 0 }}
+                     whileInView={{ y: 0, opacity: 1 }}
+                     viewport={{ once: true }}
+                     className="relative aspect-[4/5] bg-zinc-100 editorial-shadow overflow-hidden group"
+                   >
+                      <Image src={menuData.desserts.image} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" alt="Deconstructed Saffron Dessert" />
+                      <div className="absolute inset-0 bg-zinc-950/20 mix-blend-overlay"></div>
+                      <div className="absolute bottom-6 left-6 right-6 text-white max-w-md">
+                        <p className="font-label text-[10px] uppercase tracking-[0.4em] mb-2 text-primary">The Signature</p>
+                        <h3 className="font-luxury text-3xl italic">Rasmalai</h3>
+                      </div>
+                   </motion.div>
+                 </div>
+
                  <div className="space-y-4">
                     {menuData.desserts.items.map((item, i) => (
                       <div key={i} className="group py-8 border-b border-zinc-200 last:border-0">
@@ -286,7 +383,7 @@ export default function Menu() {
                     ))}
                     <div className="mt-12 flex justify-start">
                       <Link href="/menu/full" className="group flex items-center space-x-4">
-                        <span className="font-label text-[10px] uppercase tracking-[0.4em] text-zinc-900 group-hover:text-primary transition-colors">
+                        <span className="font-label text-[10px] uppercase tracking-[0.4em] text-zinc-600 group-hover:text-primary transition-colors">
                           [ View Full Category ]
                         </span>
                         <div className="w-8 h-px bg-zinc-200 group-hover:w-12 group-hover:bg-primary transition-all duration-300"></div>
@@ -294,12 +391,13 @@ export default function Menu() {
                     </div>
                  </div>
                </div>
-               <div>
+
+               <div className="hidden lg:block order-1 lg:order-2">
                   <motion.div 
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    className="relative aspect-square md:aspect-[4/5] bg-zinc-100 editorial-shadow overflow-hidden group"
+                    className="relative aspect-[4/5] bg-zinc-100 editorial-shadow overflow-hidden group"
                   >
                       <Image src={menuData.desserts.image} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" alt="Deconstructed Saffron Dessert" />
                       <div className="absolute inset-0 bg-zinc-950/20 mix-blend-overlay"></div>
@@ -310,6 +408,7 @@ export default function Menu() {
                       </div>
                   </motion.div>
                </div>
+
             </div>
           </div>
         </section>

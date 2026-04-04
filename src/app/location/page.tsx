@@ -134,26 +134,26 @@ export default function Location() {
       </section>
 
       {/* 3. The Atelier Hours (Unified White Theme) */}
-      <section className="py-16 md:py-24 bg-white relative z-30 border-y border-zinc-100">
+      <section className="py-12 md:py-24 bg-white relative z-30 border-y border-zinc-100">
         <div className="px-5 md:px-20 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <span className="font-label text-[14px] uppercase tracking-[0.7em] text-zinc-400 mb-6 block">Service Hours</span>
-              <h2 className="font-luxury text-5xl md:text-8xl text-zinc-950 leading-[0.95]">The <br /><span className="italic font-normal">Rhythm</span></h2>
-              <p className="font-body text-zinc-500 text-sm mt-8 max-w-xs leading-relaxed tracking-widest uppercase">of the dining hall and the passage of moments.</p>
+              <span className="font-label text-[11px] md:text-[14px] uppercase tracking-[0.7em] text-zinc-400 mb-4 md:mb-6 block">Service Hours</span>
+              <h2 className="font-luxury text-4xl md:text-8xl text-zinc-950 leading-[0.95]">The <br /><span className="italic font-normal">Rhythm</span></h2>
+              <p className="font-body text-zinc-500 text-xs md:text-sm mt-6 md:mt-8 max-w-xs leading-relaxed tracking-widest uppercase">of the dining hall and the passage of moments.</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 w-full pt-6">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-8 md:gap-y-12 w-full pt-6">
                {[
                  { day: "MON — THU", time: "12:00 — 23:00", note: "CLASSIC SERVICE" },
                  { day: "FRI — SAT", time: "12:00 — 00:00", note: "CANDLELIGHT" },
                  { day: "SUN BRUNCH", time: "11:00 — 16:00", note: "THE FLOATING" },
                  { day: "SUN DINNER", time: "19:00 — 22:30", note: "REFLECTION" },
                ].map((slot, i) => (
-               <div key={i} className="space-y-5 pb-8 border-b border-zinc-100">
-                  <span className="font-label text-[13px] uppercase tracking-[0.4em] text-zinc-400 block">{slot.day}</span>
-                  <h4 className="font-luxury text-[45px] text-zinc-950 leading-none">{slot.time}</h4>
-                  <p className="font-label text-[13px] uppercase tracking-[0.4em] text-zinc-400">{slot.note}</p>
+               <div key={i} className="space-y-3 md:space-y-5 pb-6 md:pb-8 border-b border-zinc-100">
+                  <span className="font-label text-[11px] md:text-[13px] uppercase tracking-[0.4em] text-zinc-400 block">{slot.day}</span>
+                  <h4 className="font-luxury text-xl md:text-[45px] text-zinc-950 leading-none">{slot.time}</h4>
+                  <p className="font-label text-[11px] md:text-[13px] uppercase tracking-[0.4em] text-zinc-400">{slot.note}</p>
                </div>
                ))}
             </div>

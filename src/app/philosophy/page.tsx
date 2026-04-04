@@ -191,11 +191,11 @@ export default function Philosophy() {
                 <h2 className="font-headline text-4xl md:text-7xl mb-10 md:mb-16 text-surface leading-tight">Julian <br /><span className="text-primary-container">Saint-Clair</span></h2>
                 <div className="relative mb-20">
                   <span className="absolute -top-12 -left-8 text-8xl font-headline text-primary/40 opacity-70">“</span>
-                  <p className="font-headline text-3xl md:text-4xl text-primary-container leading-snug relative z-10">
-                    Gastronomy is the only art form that engages all five senses simultaneously. My mission is to ensure they all leave with a memory.
+                  <p className="font-headline text-xl sm:text-2xl md:text-4xl text-primary-container leading-snug relative z-10">
+                    Host of the Century: Gastronomy is the only art form that engages all five senses simultaneously. My mission is to ensure they all leave with a memory.
                   </p>
                 </div>
-                <p className="font-body text-lg text-surface/60 leading-relaxed mb-12 font-light">
+                <p className="font-body text-sm md:text-lg text-surface/60 leading-relaxed mb-12 font-light">
                   Trained in the Michelin-starred kitchens of Lyons and Tokyo, Chef Julian brings a unique technical mastery to L'Éclat. His vision is one of restraint—where the complexity of the dish lies hidden beneath a veneer of elegant simplicity.
                 </p>
                 <div className="flex items-center gap-6 group">
@@ -224,14 +224,14 @@ export default function Philosophy() {
               <div className="lg:col-span-8 h-[800px] overflow-y-auto pr-6 custom-scrollbar snap-y snap-mandatory space-y-24">
                 {timelineEvents.map((event, index) => (
                   <div key={index} className="flex flex-col md:flex-row gap-12 items-center group snap-start">
-                    <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'order-2 md:order-1' : 'order-1 md:order-1'}`}>
+                    <div className="w-full md:w-1/2 order-1 md:order-1">
                       <span className="font-headline text-7xl text-primary/80 transition-colors duration-700 block mb-6">{event.year}</span>
                       <h4 className="font-headline text-2xl text-on-surface mb-4">{event.title}</h4>
                       <p className="text-on-surface-variant font-body leading-relaxed opacity-80">
                         {event.description}
                       </p>
                     </div>
-                    <div className={`w-full md:w-1/2 aspect-[4/3] rounded-xl overflow-hidden editorial-shadow transition-transform duration-700 ${event.rotate} group-hover:rotate-0 ${index % 2 === 0 ? 'order-1 md:order-2' : 'order-2 md:order-2'}`}>
+                    <div className={`w-full md:w-1/2 aspect-[4/3] rounded-xl overflow-hidden editorial-shadow transition-transform duration-700 ${event.rotate} group-hover:rotate-0 order-2 md:order-2`}>
                       <img alt={event.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src={event.image} />
                     </div>
                   </div>

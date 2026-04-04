@@ -11,7 +11,7 @@ interface GalleryRevealProps {
 export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
   const containerRef = useRef(null);
   const sanctuaryRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -44,9 +44,9 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
       {/* 1. The Sanctuary (Offset Grid) */}
       <section ref={sanctuaryRef} className="px-5 md:px-8 py-12 md:py-20 min-h-[80vh] flex items-center overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 lg:gap-20 items-start w-full max-w-[1600px] mx-auto">
-          <motion.div 
+          <motion.div
             style={{ y: mainParallax }}
-            className="md:col-span-7 relative group overflow-hidden gallery-item"
+            className="hidden md:block md:col-span-7 relative group overflow-hidden gallery-item"
           >
             <img alt="The Sanctuary - Warm Premium Indian Restaurant Interior" className="w-full aspect-square md:aspect-[4/5] object-cover rounded-sm transition-transform duration-700 hover:scale-[1.03]" src="/images/gallery/sanctuary_beside.png" />
             <div className="overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500 flex items-center justify-center">
@@ -65,11 +65,19 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
               </div>
               <p className="font-body text-secondary text-base md:text-xl leading-relaxed max-w-sm">A space designed to silence the world outside, where every candle flicker is a choreographed note in your evening&apos;s symphony.</p>
             </div>
-            <motion.div 
+            {/* Promotion of visual on mobile: Increased size */}
+            <motion.div
               style={{ y: detailParallax }}
               className="relative group overflow-hidden gallery-item w-full md:max-w-md md:ml-12 shadow-2xl flex-grow flex items-end"
             >
-              <img alt="Artisanal Sanctuary Corner - Minimalist Indian Luxury" className="w-full aspect-square md:aspect-auto md:h-full object-cover rounded-sm transition-transform duration-700 hover:scale-[1.03]" src="/images/gallery/sanctuary_vertical.png" />
+              <picture className="w-full h-full">
+                <source media="(min-width: 768px)" srcSet="/images/gallery/sanctuary_vertical.png" />
+                <img 
+                  alt="Artisanal Sanctuary Corner - Minimalist Indian Luxury" 
+                  className="w-full aspect-square md:aspect-auto md:h-full object-cover rounded-sm transition-transform duration-700 hover:scale-[1.03]" 
+                  src="/images/gallery/sanctuary_interior.png" 
+                />
+              </picture>
               <div className="overlay absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-500 flex items-center justify-center">
                 <span className="material-symbols-outlined text-white text-4xl">spa</span>
               </div>
@@ -82,12 +90,7 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
       <section className="px-5 md:px-8 mt-12 md:mt-20">
         <div className="relative py-10 md:py-16 -mx-5 md:-mx-8 px-5 md:px-8 bg-surface-container-low overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8 md:gap-16">
-            <div className="md:col-span-8 relative z-10">
-              <div className="relative gallery-item group overflow-hidden">
-                <img alt="Chef Julian Saint-Clair preparing a signature dish with precision" className="w-full h-[320px] sm:h-[450px] md:h-[600px] object-cover rounded-sm shadow-2xl transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX5focX3Xv4ND-1y46H1ufcNTzEhiV8sgh4Sk0gutEK9qUsbuEF_xFijg7Q1jGj4lMPTCH-1ooVEQUyHOOkotheFAbTnUdU0bCqs9OchBlnU49J3q-5fb6_FJoGmAjUcmJa064Hq7PD0NewHGRk66tnbzow7DpsdOPZnGQzg_la6oT9M5bR-2i6Q6gIo4QUNHLVO_lEYzr1EHPN3mdBiWB6GviKRdPPpMl2_QP-UnZVrvu4IOPdGUb9MgeCpW_lPOHwxQxi9TmvzI" />
-              </div>
-            </div>
-            <div className="md:col-span-4 space-y-5 md:space-y-8">
+            <div className="md:col-span-4 order-1 md:order-2 space-y-5 md:space-y-8">
               <span className="font-label text-xs uppercase tracking-[0.3em] text-primary">Mastery</span>
               <h3 className="font-serif text-3xl md:text-5xl leading-tight">The Alchemy of Pure Passion</h3>
               <p className="font-body text-secondary text-sm md:text-lg leading-relaxed">Guided by executive chef Julian Saint-Clair, our kitchen operates with the precision of a Swiss watch and the soul of a poet.</p>
@@ -95,6 +98,11 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
                 Meet the Artisans
                 <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
+            </div>
+            <div className="md:col-span-8 order-2 md:order-1 relative z-10">
+              <div className="relative gallery-item group overflow-hidden">
+                <img alt="Chef Julian Saint-Clair preparing a signature dish with precision" className="w-full h-[320px] sm:h-[450px] md:h-[600px] object-cover rounded-sm shadow-2xl transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX5focX3Xv4ND-1y46H1ufcNTzEhiV8sgh4Sk0gutEK9qUsbuEF_xFijg7Q1jGj4lMPTCH-1ooVEQUyHOOkotheFAbTnUdU0bCqs9OchBlnU49J3q-5fb6_FJoGmAjUcmJa064Hq7PD0NewHGRk66tnbzow7DpsdOPZnGQzg_la6oT9M5bR-2i6Q6gIo4QUNHLVO_lEYzr1EHPN3mdBiWB6GviKRdPPpMl2_QP-UnZVrvu4IOPdGUb9MgeCpW_lPOHwxQxi9TmvzI" />
+              </div>
             </div>
           </div>
           <span className="absolute -bottom-10 md:-bottom-20 -right-10 font-serif text-[8rem] md:text-[20rem] text-surface-container opacity-30 select-none pointer-events-none">02</span>
@@ -109,10 +117,17 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
             style={{ scale, transformOrigin: "center center" }}
             className="absolute inset-0"
           >
+            {/* Mobile Image */}
+            <img
+              src="/images/gallery_mobile.png"
+              alt="Gallery Showcase Reveal Mobile"
+              className="md:hidden w-full h-full object-cover"
+            />
+            {/* Desktop Image */}
             <img
               src="/images/gallery.png"
               alt="Gallery Showcase Reveal"
-              className="w-full h-full object-cover"
+              className="hidden md:block w-full h-full object-cover"
             />
           </motion.div>
         </div>

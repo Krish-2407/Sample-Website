@@ -22,6 +22,8 @@ const cormorant = Cormorant_Garamond({
   style: ["normal"],
 });
 
+import BackToTop from "./components/BackToTop";
+
 export const metadata: Metadata = {
   title: "L'ÉCLAT Gastronomy | The Art of Refined Dining",
   description: "An immersive gastronomic journey where classical techniques meet contemporary vision.",
@@ -44,6 +46,7 @@ export default function RootLayout({
         className={`${notoSerif.variable} ${manrope.variable} ${cormorant.variable} bg-background text-on-surface font-body selection:bg-primary-fixed-dim antialiased min-h-full flex flex-col`}
       >
         {children}
+        <BackToTop />
       </body>
     </html>
   );
