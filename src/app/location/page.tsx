@@ -1,131 +1,168 @@
+"use client";
+
+import { useRef, useState } from "react";
 import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 
 export default function Location() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [isMapActive, setIsMapActive] = useState(false);
+
+  // --- Scroll Progress for Hero ---
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  // --- Hero Animations (Stay Dark as requested) ---
+  const heroScale = useTransform(heroScroll, [0, 1], [1, 1.15]);
+  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
+  const textSplitLeft = useTransform(heroScroll, [0, 0.5], [0, -100]);
+  const textSplitRight = useTransform(heroScroll, [0, 0.5], [0, 100]);
+  const textFade = useTransform(heroScroll, [0, 0.3], [1, 0]);
+
   return (
-    <>
-      <HeaderNav activePage="location" theme="light" />
+    <div ref={containerRef} className="bg-background relative">
+      <HeaderNav activePage="location" theme="dark" />
 
-      <main className="pt-20 md:pt-32">
-        {/* Hero Section */}
-        <section className="px-5 md:px-8 mb-16 md:mb-32">
-          <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end">
-            <div className="md:col-span-7 z-10">
-              <span className="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 md:mb-6 block">The Paris Sanctuary</span>
-              <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] leading-[1.1] mb-5 md:mb-8 text-on-surface">
-                Our <span className="italic font-normal">Sanctuary</span>
-              </h1>
-              <p className="font-body text-sm md:text-lg text-secondary max-w-lg leading-relaxed">
-                Nestled in the golden triangle of Paris, L&apos;ÉCLAT offers a refined escape from the rhythmic pulse of the Avenue des Champs-Élysées.
-              </p>
-            </div>
-            <div className="md:col-span-5 relative">
-              <div className="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg">
-                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnWhmxlczW-BdjhThwnDe9lJd-_ycqR4cXg5H7l2NzgwqiMlQT_4Gm-GfbtXr_rFDi-JNwr-ppal4unwDFaKThHVNd6q7puPo9kdvzPkQacdkLhytGDUOFjOMdpKwUGFVKDpo65s9FcgOEIhDRxLdGDHUocBn6npkps3aRCzMdeGx2gOR6yPjM4cPKJUXa3l9KPbdhoR0m8mmiNSGYenxDxarjXgSDSjYtO7UgRzYXpCiP0opW6lMKyl5baqOilq3UqVY5Mb8nfU" />
-              </div>
-            </div>
+      {/* 1. Cinematic Hero: The Threshold (Dark/Cinematic) */}
+      <section ref={heroRef} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-zinc-950">
+        <motion.div 
+          style={{ scale: heroScale, opacity: heroOpacity }}
+          className="absolute inset-0 z-0"
+        >
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnWhmxlczW-BdjhThwnDe9lJd-_ycqR4cXg5H7l2NzgwqiMlQT_4Gm-GfbtXr_rFDi-JNwr-ppal4unwDFaKThHVNd6q7puPo9kdvzPkQacdkLhytGDUOFjOMdpKwUGFVKDpo65s9FcgOEIhDRxLdGDHUocBn6npkps3aRCzMdeGx2gOR6yPjM4cPKJUXa3l9KPbdhoR0m8mmiNSGYenxDxarjXgSDSjYtO7UgRzYXpCiP0opW6lMKyl5baqOilq3UqVY5Mb8nfU" 
+            alt="L'ÉCLAT Sanctuary Entrance"
+            className="w-full h-full object-cover brightness-[0.4]"
+          />
+        </motion.div>
+
+        <div className="relative z-10 text-center px-5 flex flex-col items-center">
+          <motion.span 
+            style={{ opacity: textFade }}
+            className="font-label text-xs uppercase tracking-[0.8em] text-primary-fixed mb-8 block"
+          >
+            PARIS 8E ARR.
+          </motion.span>
+          <div className="flex items-center gap-4 md:gap-8 overflow-hidden">
+            <motion.h1 
+              style={{ x: textSplitLeft }}
+              className="font-luxury text-6xl sm:text-8xl md:text-[10rem] text-white leading-none tracking-tighter"
+            >
+              LOCA
+            </motion.h1>
+            <motion.h1 
+              style={{ x: textSplitRight }}
+              className="font-luxury text-6xl sm:text-8xl md:text-[10rem] text-white leading-none tracking-tighter"
+            >
+              TION
+            </motion.h1>
           </div>
-        </section>
+          <motion.p 
+            style={{ opacity: textFade }}
+            className="font-headline italic text-2xl md:text-3xl text-primary-fixed mt-10 max-w-lg"
+          >
+            Where time slows to the rhythm of the city.
+          </motion.p>
+        </div>
+        
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+           <span className="material-symbols-outlined text-white text-3xl">keyboard_double_arrow_down</span>
+        </div>
+      </section>
 
-        {/* Details Grid */}
-        <section className="bg-surface-container-low py-16 md:py-32">
-          <div className="px-5 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-24">
-              {/* Contact Column */}
-              <div className="space-y-12">
-                <div>
-                  <span className="font-label text-[10px] uppercase tracking-widest text-primary/60 mb-4 block">Direct Contact</span>
-                  <div className="space-y-4">
-                    <p className="font-headline text-2xl text-on-surface">+33 (0) 1 45 62 11 00</p>
-                    <p className="font-body text-secondary border-b border-outline-variant/30 pb-2 inline-block">concierge@leclat-gastronomy.fr</p>
-                  </div>
-                </div>
-                <div>
-                  <span className="font-label text-[10px] uppercase tracking-widest text-primary/60 mb-4 block">The Address</span>
-                  <address className="not-italic font-headline text-2xl text-on-surface leading-snug">
-                    128 Avenue des Champs-Élysées<br />
-                    75008 Paris, France
-                  </address>
-                </div>
-              </div>
-              
-              {/* Hours Column */}
-              <div className="md:col-span-2 bg-surface-container-lowest p-12 shadow-[0_40px_100px_-20px_rgba(26,28,26,0.04)] rounded-lg">
-                <span className="font-label text-[10px] uppercase tracking-widest text-primary mb-8 block">Service Hours</span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-8">
-                  <div className="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-                    <span className="font-label text-xs uppercase tracking-widest">Monday — Thursday</span>
-                    <span className="font-headline italic text-primary">12:00 — 23:00</span>
-                  </div>
-                  <div className="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-                    <span className="font-label text-xs uppercase tracking-widest">Friday — Saturday</span>
-                    <span className="font-headline italic text-primary">12:00 — 00:00</span>
-                  </div>
-                  <div className="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-                    <span className="font-label text-xs uppercase tracking-widest">Sunday Brunch</span>
-                    <span className="font-headline italic text-primary">11:00 — 16:00</span>
-                  </div>
-                  <div className="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-                    <span className="font-label text-xs uppercase tracking-widest">Sunday Dinner</span>
-                    <span className="font-headline italic text-primary">19:00 — 22:30</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-32 overflow-hidden">
-          <div className="px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-4 order-2 md:order-1">
-              <h2 className="font-headline text-4xl mb-8">How to <span className="italic font-normal">Reach Us</span></h2>
+      {/* 2. Integrated Discovery & Map (Light Theme - Combined) */}
+      <section className="bg-background relative z-20 py-20 md:py-40">
+        <div className="px-5 md:px-20 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
+            
+            {/* Left Column: Address and Sanctuary Details */}
+            <div className="flex flex-col justify-center space-y-16">
               <div className="space-y-8">
-                <div>
-                  <h3 className="font-label text-[11px] uppercase tracking-widest text-primary mb-2">Valet Service</h3>
-                  <p className="font-body text-sm leading-relaxed text-secondary">
-                    Private valet parking is available at the main entrance. For guests arriving with chauffeured services, a dedicated drop-off point is located at the side arcade.
-                  </p>
+                <span className="font-label text-lg uppercase tracking-[0.6em] text-primary block">Discovery</span>
+                <h2 className="font-luxury text-5xl md:text-7xl text-zinc-900 leading-[1.1]">
+                  9¾, Aurora Borealis Avenue <br />
+                  <span className="italic font-normal">Crystal Peak</span>
+                </h2>
+                <p className="font-body text-zinc-400 text-lg tracking-widest uppercase">
+                  Floating Isles, Mumbai — 888888
+                </p>
+                <div className="w-16 h-px bg-primary/30"></div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div className="space-y-4">
+                   <p className="font-label text-[10px] uppercase tracking-[0.4em] text-primary/60">Reservations</p>
+                   <a href="tel:+919876543210" className="font-luxury text-2xl text-zinc-900 hover:text-primary transition-colors">+91 98765 43210</a>
                 </div>
-                <div>
-                  <h3 className="font-label text-[11px] uppercase tracking-widest text-primary mb-2">Public Transport</h3>
-                  <p className="font-body text-sm leading-relaxed text-secondary">
-                    The nearest station is George V (Line 1), situated a mere two-minute stroll from our doorstep.
-                  </p>
+                <div className="space-y-4">
+                   <p className="font-label text-[10px] uppercase tracking-[0.4em] text-primary/60">Inquiry</p>
+                   <p className="font-body text-zinc-700 border-b border-zinc-200 pb-1 text-sm tracking-widest">reservations@leclat.void</p>
                 </div>
               </div>
+
+              <div className="pt-8">
+                <Link href="/reservations" className="inline-block bg-zinc-900 text-white py-5 px-12 text-[11px] uppercase tracking-[0.4em] font-bold transition-all hover:bg-primary-container hover:text-on-primary-container editorial-shadow">
+                  Prepare Your Arrival
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Map Integration (Always Open) */}
+            <div className="relative h-[500px] md:h-auto min-h-[600px] bg-zinc-100 overflow-hidden editorial-shadow">
+               {/* Real Map layer (Google Maps Embed) - Always Active */}
+               <div className="absolute inset-0 w-full h-full">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15088.357874983056!2d72.8155986871582!3d18.925573400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c5d0130f4d%3A0x86b033320c29571e!2sNariman%20Point%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1712222222222!5m2!1sen!2sin" 
+                    className="w-full h-full border-0 grayscale brightness-95 contrast-125 opacity-90"
+                    allowFullScreen 
+                    style={{ filter: "grayscale(1) contrast(1.2) brightness(0.9) sepia(0.1)" }}
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  
+                  {/* Subtle Grain/Overlay for Texture */}
+                  <div className="absolute inset-0 pointer-events-none bg-zinc-900/5 mix-blend-multiply opacity-20"></div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. The Atelier Hours (Unified White Theme) */}
+      <section className="py-16 md:py-24 bg-white relative z-30 border-y border-zinc-100">
+        <div className="px-5 md:px-20 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div>
+              <span className="font-label text-[14px] uppercase tracking-[0.7em] text-zinc-400 mb-6 block">Service Hours</span>
+              <h2 className="font-luxury text-5xl md:text-8xl text-zinc-950 leading-[0.95]">The <br /><span className="italic font-normal">Rhythm</span></h2>
+              <p className="font-body text-zinc-500 text-sm mt-8 max-w-xs leading-relaxed tracking-widest uppercase">of the dining hall and the passage of moments.</p>
             </div>
             
-            <div className="md:col-span-8 order-1 md:order-2">
-              <div className="relative w-full aspect-[16/9] bg-surface-container rounded-lg overflow-hidden group">
-                <img className="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105" data-alt="Clean and minimal light-themed map style illustration of Paris 8th arrondissement centered on Champs-Élysées with a gold pin icon" data-location="Paris, France" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA93ntpwALb8IMJAzLRhUp6bdoggWrKBkHNx7EiyX5IO407HZIEF5UnufzwdkqM_emrrXFpTnrzYRxD8BFVKgj__KTGpAFoYD87Eb-9l2blG_A3cQ9P1RM3wA3d2LvsAzu5sT3ZT2f8uTsCyRE12wNDrKHvFwgvUPpFXbL6Pys7QF4mzrKpCoeavXr0HT1MLwaLkPEfVPGaJ43_-xEwQla6DhI0d9qIWxUSeB7cMrMswjsAmgFbAKI-xO2CKWrOxtWrZZxas4DaaZk" />
-                <div className="absolute inset-0 bg-primary/5 pointer-events-none"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <span className="material-symbols-outlined text-primary text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 w-full pt-6">
+               {[
+                 { day: "MON — THU", time: "12:00 — 23:00", note: "CLASSIC SERVICE" },
+                 { day: "FRI — SAT", time: "12:00 — 00:00", note: "CANDLELIGHT" },
+                 { day: "SUN BRUNCH", time: "11:00 — 16:00", note: "THE FLOATING" },
+                 { day: "SUN DINNER", time: "19:00 — 22:30", note: "REFLECTION" },
+               ].map((slot, i) => (
+               <div key={i} className="space-y-5 pb-8 border-b border-zinc-100">
+                  <span className="font-label text-[13px] uppercase tracking-[0.4em] text-zinc-400 block">{slot.day}</span>
+                  <h4 className="font-luxury text-[45px] text-zinc-950 leading-none">{slot.time}</h4>
+                  <p className="font-label text-[13px] uppercase tracking-[0.4em] text-zinc-400">{slot.note}</p>
+               </div>
+               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Arrival Gallery */}
-        <section className="pb-32">
-          <div className="px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="aspect-[3/4] overflow-hidden rounded-lg">
-              <img className="w-full h-full object-cover" data-alt="Close up of a luxury restaurant entrance with polished brass handle and a subtle shadow cast on a limestone wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVxKktsy8LToEIdO5h4TLqBVGIgCE0kPqH9roRriGHXu5PiRAp3sCli1cdBa1dCPgAS8yu8kzcPIvgYuNNjnU6I6B18lIariAqIypoh_7yBiZWT7WHXMvnoPegpo4FYFrV5jgTuDRkaMaYPdtv5Jp15sXvDFxBxvg6RV_vDuGuPWWlUHXQtQGuvBN-kHm_QPLmHDMAM3b_WUSZ2pIWzF_ZocrRXfMhWeHGe4S-00RKEAu8n1YcysGXTB1R-rSzm9C78ZfZ6FxQ_M4" />
-            </div>
-            <div className="aspect-[3/4] overflow-hidden rounded-lg mt-12">
-              <img className="w-full h-full object-cover" data-alt="Iconic view of Eiffel Tower in the distance seen from a classic Parisian street during sunset with soft warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVMAa9XRmhI_364Xas28A_a919_YVbmIzdO0slo2RZl1BxiHE7heupmPlTQCn7YKsYgoyMdpRXTSw7UBdENtcKEAawAgXsMbyE58boNXjmfcP2DeHx5u7_kAE3tjQo5g-tjl--Fi8pD5bxbOI7C_vGTPr_5tKdFv2k2HrKu1yc3nisGTwu8ME-x5Yvfr06bpHO8NuotjiZLWdm3fakw97X8ameJIwpv3kDU2WtcJp4BUi4Ra9QysG6N5oW2oSkSd5ju-hcf1oWf5Q" />
-            </div>
-            <div className="aspect-[3/4] overflow-hidden rounded-lg">
-              <img className="w-full h-full object-cover" data-alt="Interior view of a high-end restaurant foyer with a large bouquet of white lilies in a crystal vase on a marble table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoT7F-EZJLZBCucKHJS4fiwhNnCOxZAS37jveZFIIk2tG4PpeXLgqwcJLgc_ZhcyAA0YJDWYjiXDXyoO3qw-pAt-DhhMm6tub37Akqm2xqw2c0jh_-0cbfVJ7cJ5C1Za-iuTSeNsLDPVPZebrCKmrilXU1VYwHDe9hQN_EOujw3sT6q25DQiuW6OiHPEFYGFsy5CR-W0w-JgfAGWfDSfsU5VUHElSs6Yx7MQXxyVL9LwKGfipnpJyO95ddERbZh86YqVi5XxAh61A" />
-            </div>
-          </div>
-        </section>
-      </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
