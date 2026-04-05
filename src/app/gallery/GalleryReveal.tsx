@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
 
@@ -11,6 +11,14 @@ interface GalleryRevealProps {
 export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
   const containerRef = useRef(null);
   const sanctuaryRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -34,10 +42,16 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
   const mainParallax = useTransform(sanctuaryProgress, [0, 1], ["-5%", "5%"]);
   const detailParallax = useTransform(sanctuaryProgress, [0, 1], ["10%", "-10%"]);
 
-  // Desktop: scale from 2.8 → 1.1. Mobile: 2.8 → 1.1 (zoomed initial state)
-  // Revised Fix: Starting at 2.8x to match reference and ending at 1.1x for safety margin
-  const rawScale = useTransform(scrollYProgress, [0.1, 0.75], [2.8, 1.1], { clamp: true });
+  // Responsive Animation Settings
+  // Desktop: Original 1.667 -> 1.0 zoom (Range 0.15 - 0.85)
+  // Mobile: Custom 2.8 -> 1.1 zoom (Range 0.1 - 0.75) for bug-free Redmi 12 5G
+  const startScale = isMobile ? 2.8 : 1.667;
+  const endScale = isMobile ? 1.1 : 1.0;
+  const range = isMobile ? [0.1, 0.75] : [0.15, 0.85];
+
+  const rawScale = useTransform(scrollYProgress, range, [startScale, endScale], { clamp: true });
   const scale = useSpring(rawScale, { stiffness: 80, damping: 25, restDelta: 0.001 });
+  const transformOrigin = isMobile ? "center 42%" : "center center";
 
   return (
     <>
@@ -112,11 +126,11 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
       {/* 3. Sticky Full-Screen Zoom-Out Reveal
           Desktop: 300vh | Mobile: 220vh — responsive via min/max */}
       <section ref={containerRef} className="relative h-[220vh] md:h-[300vh] mt-12 md:mt-20">
-        <div className="sticky top-0 h-[100.5vh] w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center">
+        <div className={`sticky top-0 ${isMobile ? "h-[100.5vh]" : "h-[100dvh]"} w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center`}>
           <motion.div
             style={{ 
               scale,
-              transformOrigin: "center 42%",
+              transformOrigin,
               width: "100%",
               height: "100%",
               display: "flex",
