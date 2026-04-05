@@ -15,6 +15,7 @@ const FlipbookMenu = dynamic(() => import("@/app/components/FlipbookMenu"), {
 import HeaderNav from "@/app/components/HeaderNav";
 import Footer from "@/app/components/Footer";
 import { motion } from "framer-motion";
+import AnimatedText from "@/app/components/AnimatedText";
 
 export default function FullMenuPage() {
   return (
@@ -45,31 +46,30 @@ export default function FullMenuPage() {
         </div>
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 text-center mb-10">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+          <AnimatedText 
+            as="span"
+            type="fade"
             className="font-label text-xs uppercase tracking-[0.8em] text-primary mb-6 block"
           >
             THE FULL COLLECTION
-          </motion.span>
+          </AnimatedText>
           
-          <motion.h1 
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, delay: 0.2 }}
+          <AnimatedText 
+             as="h1"
+             type="reveal"
+             delay={0.2}
              className="font-luxury text-5xl md:text-7xl text-zinc-950 mb-4"
           >
             L'ÉCLAT Menu
-          </motion.h1>
-          <motion.p
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, delay: 0.3 }}
+          </AnimatedText>
+          <AnimatedText
+             as="p"
+             type="fade"
+             delay={0.4}
              className="font-body text-zinc-500 max-w-xl mx-auto italic"
           >
              Flip through the pages to explore our complete culinary narrative, an homage to the timeless traditions of Indian vegetarian gastronomy.
-          </motion.p>
+          </AnimatedText>
         </div>
 
         {/* 3. The Flipbook Component */}

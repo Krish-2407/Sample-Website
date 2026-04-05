@@ -5,6 +5,7 @@ import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import AnimatedText from "../components/AnimatedText";
 
 export default function Location() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,14 +84,16 @@ export default function Location() {
             {/* Left Column: Address and Sanctuary Details */}
             <div className="flex flex-col justify-center space-y-16">
               <div className="space-y-8">
-                <span className="font-label text-lg uppercase tracking-[0.6em] text-primary block">Discovery</span>
-                <h2 className="font-luxury text-5xl md:text-7xl text-zinc-900 leading-[1.1]">
+                <AnimatedText as="span" type="fade" className="font-label text-lg uppercase tracking-[0.6em] text-primary block">
+                  Discovery
+                </AnimatedText>
+                <AnimatedText as="h2" type="reveal" delay={0.2} className="font-luxury text-5xl md:text-7xl text-zinc-900 leading-[1.1]">
                   9¾, Aurora Borealis Avenue <br />
                   <span className="italic font-normal">Crystal Peak</span>
-                </h2>
-                <p className="font-body text-zinc-400 text-lg tracking-widest uppercase">
+                </AnimatedText>
+                <AnimatedText as="p" type="fade" delay={0.4} className="font-body text-zinc-400 text-lg tracking-widest uppercase">
                   Floating Isles, Mumbai — 888888
-                </p>
+                </AnimatedText>
                 <div className="w-16 h-px bg-primary/30"></div>
               </div>
 
@@ -138,9 +141,15 @@ export default function Location() {
         <div className="px-5 md:px-20 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <span className="font-label text-[11px] md:text-[14px] uppercase tracking-[0.7em] text-zinc-400 mb-4 md:mb-6 block">Service Hours</span>
-              <h2 className="font-luxury text-4xl md:text-8xl text-zinc-950 leading-[0.95]">The <br /><span className="italic font-normal">Rhythm</span></h2>
-              <p className="font-body text-zinc-500 text-xs md:text-sm mt-6 md:mt-8 max-w-xs leading-relaxed tracking-widest uppercase">of the dining hall and the passage of moments.</p>
+              <AnimatedText as="span" type="fade" className="font-label text-[11px] md:text-[14px] uppercase tracking-[0.7em] text-zinc-400 mb-4 md:mb-6 block">
+                Service Hours
+              </AnimatedText>
+              <AnimatedText as="h2" type="reveal" delay={0.2} className="font-luxury text-4xl md:text-8xl text-zinc-950 leading-[0.95]">
+                The <br /><span className="italic font-normal">Rhythm</span>
+              </AnimatedText>
+              <AnimatedText as="p" type="fade" delay={0.4} className="font-body text-zinc-500 text-xs md:text-sm mt-6 md:mt-8 max-w-xs leading-relaxed tracking-widest uppercase">
+                 of the dining hall and the passage of moments.
+              </AnimatedText>
             </div>
             
             <div className="grid grid-cols-2 gap-x-8 gap-y-8 md:gap-y-12 w-full pt-6">

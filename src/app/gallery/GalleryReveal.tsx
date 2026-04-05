@@ -34,9 +34,9 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
   const mainParallax = useTransform(sanctuaryProgress, [0, 1], ["-5%", "5%"]);
   const detailParallax = useTransform(sanctuaryProgress, [0, 1], ["10%", "-10%"]);
 
-  // Desktop: scale from 1.667 → 1.0. Mobile: 2.0 → 1.0 (stronger crop on portrait)
-  // Timing: 15% hold → 70% animate → 15% pause
-  const rawScale = useTransform(scrollYProgress, [0.15, 0.85], [1.667, 1]);
+  // Desktop: scale from 2.8 → 1.1. Mobile: 2.8 → 1.1 (zoomed initial state)
+  // Revised Fix: Starting at 2.8x to match reference and ending at 1.1x for safety margin
+  const rawScale = useTransform(scrollYProgress, [0.1, 0.75], [2.8, 1.1], { clamp: true });
   const scale = useSpring(rawScale, { stiffness: 80, damping: 25, restDelta: 0.001 });
 
   return (
@@ -112,16 +112,25 @@ export default function GalleryReveal({ onRevealActive }: GalleryRevealProps) {
       {/* 3. Sticky Full-Screen Zoom-Out Reveal
           Desktop: 300vh | Mobile: 220vh — responsive via min/max */}
       <section ref={containerRef} className="relative h-[220vh] md:h-[300vh] mt-12 md:mt-20">
-        <div className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-[#0a0a0a]">
+        <div className="sticky top-0 h-[100.5vh] w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center">
           <motion.div
-            style={{ scale, transformOrigin: "center center" }}
+            style={{ 
+              scale,
+              transformOrigin: "center 42%",
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
             className="absolute inset-0"
           >
-            {/* Mobile Image */}
+            {/* Mobile Image with 1.05x safety bleed */}
             <img
               src="/images/gallery_mobile.png"
               alt="Gallery Showcase Reveal Mobile"
-              className="md:hidden w-full h-full object-cover"
+              className="md:hidden min-w-full min-h-full object-cover"
+              style={{ transform: "scale(1.05)" }}
             />
             {/* Desktop Image */}
             <img

@@ -6,6 +6,7 @@ import Image from "next/image";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
+import AnimatedText from "../components/AnimatedText";
 
 const timelineEvents = [
   {
@@ -83,15 +84,17 @@ export default function Philosophy() {
         <section className="relative pt-20 md:pt-28 pb-16 md:pb-40 px-5 md:px-20 bg-surface overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="lg:col-span-6 z-10">
-              <span className="font-label uppercase tracking-[0.4em] text-primary mb-5 md:mb-8 block font-semibold text-xs">Heritage & Vision</span>
-              <h1 className="font-luxury text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-on-surface leading-[0.95] mb-8 md:mb-12 tracking-tight">
+              <AnimatedText as="span" type="fade" className="font-label uppercase tracking-[0.4em] text-primary mb-5 md:mb-8 block font-semibold text-xs">
+                Heritage & Vision
+              </AnimatedText>
+              <AnimatedText as="h1" type="reveal" delay={0.2} className="font-luxury text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-on-surface leading-[0.95] mb-8 md:mb-12 tracking-tight">
                 The <br /><span>Soul</span> of the <br />Atelier
-              </h1>
+              </AnimatedText>
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                 <div className="w-px h-16 md:h-24 bg-primary/30 hidden md:block"></div>
-                <p className="font-body text-sm md:text-lg text-on-surface-variant max-w-sm leading-relaxed opacity-80">
+                <AnimatedText as="p" type="fade" delay={0.4} className="font-body text-sm md:text-lg text-on-surface-variant max-w-sm leading-relaxed opacity-80">
                   Founded in 2010, L'Éclat is more than a restaurant. It is a sanctuary for the senses where French culinary heritage meets a vision of purity.
-                </p>
+                </AnimatedText>
               </div>
             </div>
             <div className="lg:col-span-6 relative">
@@ -129,8 +132,12 @@ export default function Philosophy() {
         <section className="bg-surface-container-low py-40 px-6 md:px-20 relative border-y border-outline-variant/10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24">
-              <span className="font-headline text-primary text-3xl mb-4 block">Our Philosophy</span>
-              <h2 className="font-luxury text-5xl md:text-6xl text-on-surface">The Three Pillars</h2>
+              <AnimatedText as="span" type="fade" className="font-headline text-primary text-3xl mb-4 block">
+                Our Philosophy
+              </AnimatedText>
+              <AnimatedText as="h2" type="reveal" delay={0.2} className="font-luxury text-5xl md:text-6xl text-on-surface">
+                The Three Pillars
+              </AnimatedText>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
               <div className="group">
@@ -187,17 +194,21 @@ export default function Philosophy() {
             </div>
             <div className="w-full lg:w-1/2 py-16 md:py-24 px-5 md:px-24 flex flex-col justify-center bg-on-background relative z-10">
               <div className="max-w-xl">
-                <span className="font-label uppercase tracking-[0.4em] text-primary-container/40 mb-6 md:mb-10 block text-2xl">The Visionary</span>
-                <h2 className="font-headline text-4xl md:text-7xl mb-10 md:mb-16 text-surface leading-tight">Julian <br /><span className="text-primary-container">Saint-Clair</span></h2>
+                <AnimatedText as="span" type="fade" className="font-label uppercase tracking-[0.4em] text-primary-container/40 mb-6 md:mb-10 block text-2xl">
+                  The Visionary
+                </AnimatedText>
+                <AnimatedText as="h2" type="reveal" delay={0.2} className="font-headline text-4xl md:text-7xl mb-10 md:mb-16 text-surface leading-tight">
+                  Julian <br /><span className="text-primary-container">Saint-Clair</span>
+                </AnimatedText>
                 <div className="relative mb-20">
                   <span className="absolute -top-12 -left-8 text-8xl font-headline text-primary/40 opacity-70">“</span>
-                  <p className="font-headline text-xl sm:text-2xl md:text-4xl text-primary-container leading-snug relative z-10">
+                  <AnimatedText as="p" type="reveal" delay={0.4} className="font-headline text-xl sm:text-2xl md:text-4xl text-primary-container leading-snug relative z-10">
                     Host of the Century: Gastronomy is the only art form that engages all five senses simultaneously. My mission is to ensure they all leave with a memory.
-                  </p>
+                  </AnimatedText>
                 </div>
-                <p className="font-body text-sm md:text-lg text-surface/60 leading-relaxed mb-12 font-light">
+                <AnimatedText as="p" type="fade" delay={0.6} className="font-body text-sm md:text-lg text-surface/60 leading-relaxed mb-12 font-light">
                   Trained in the Michelin-starred kitchens of Lyons and Tokyo, Chef Julian brings a unique technical mastery to L'Éclat. His vision is one of restraint—where the complexity of the dish lies hidden beneath a veneer of elegant simplicity.
-                </p>
+                </AnimatedText>
                 <div className="flex items-center gap-6 group">
                   <div className="w-12 h-px bg-primary transition-all duration-500 group-hover:w-20"></div>
                   <span className="font-body font-bold text-xs uppercase tracking-widest text-primary-container">3 Michelin Stars since 2018</span>
@@ -248,9 +259,13 @@ export default function Philosophy() {
             <div className="absolute inset-0 bg-gradient-to-t from-on-background via-transparent to-transparent"></div>
           </div>
           <div className="relative z-10 container mx-auto px-6 text-center">
-            <span className="font-label uppercase tracking-[0.6em] text-primary-container mb-12 block text-xs">A Table Awaits</span>
-            <h2 className="font-luxury text-6xl md:text-8xl lg:text-9xl mb-16 leading-none tracking-tight">Become Part of <br /><span className="text-primary-container">The Narrative</span></h2>
-            <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+            <AnimatedText as="span" type="fade" className="font-label uppercase tracking-[0.6em] text-primary-container mb-12 block text-xs">
+              A Table Awaits
+            </AnimatedText>
+            <AnimatedText as="h2" type="reveal" delay={0.2} className="font-luxury text-6xl md:text-8xl lg:text-9xl mb-16 leading-none tracking-tight">
+              Become Part of <br /><span className="text-primary-container">The Narrative</span>
+            </AnimatedText>
+            <AnimatedText type="fade" delay={0.4} className="flex flex-col md:flex-row gap-8 justify-center items-center">
               <Link href="/reservations">
                 <button className="bg-primary text-on-primary px-16 py-6 text-xs uppercase tracking-[0.3em] font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all duration-500 shadow-2xl">
                   Book a Table
@@ -261,7 +276,7 @@ export default function Philosophy() {
                   Explore The Menu
                 </button>
               </Link>
-            </div>
+            </AnimatedText>
           </div>
         </section>
       </main>
