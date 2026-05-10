@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local logs and scripts
+errors.txt
+copy_images.js
+
+# Redundant mockups
+stitch_htmls/
+philosophy.html
+
+# Editor settings
+.vscode/
+
+# AI Metadata
+AGENTS.md
+CLAUDE.md
